@@ -252,6 +252,15 @@
             <input id="q-phone" type="tel" placeholder="+7 (___) ___-__-__" required
               class="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition" />
           </div>
+          <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1.5">Telegram-никнейм</label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 font-semibold select-none">@</span>
+              <input id="q-tg" type="text" placeholder="username" required
+                class="w-full border border-stone-200 rounded-xl pl-9 pr-4 py-3 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition" />
+            </div>
+            <p id="q-tg-error" class="text-xs text-red-500 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
+          </div>
         </div>
         <button id="q-submit" class="mt-5 w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-2xl text-lg transition-all shadow-md shadow-amber-200">
           Получить расчёт бесплатно →
@@ -577,6 +586,15 @@
             class="w-full bg-stone-700 border border-stone-600 text-white placeholder-stone-500 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors" />
         </div>
         <div>
+          <label class="block text-sm font-medium text-stone-300 mb-1.5">Telegram-никнейм</label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 font-semibold select-none">@</span>
+            <input id="f-tg" type="text" placeholder="username" required
+              class="w-full bg-stone-700 border border-stone-600 text-white placeholder-stone-500 rounded-xl pl-9 pr-4 py-3 focus:outline-none focus:border-amber-500 transition-colors" />
+          </div>
+          <p id="f-tg-error" class="text-xs text-red-400 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
+        </div>
+        <div>
           <label class="block text-sm font-medium text-stone-300 mb-1.5">Что планируете? <span class="text-stone-500">(необязательно)</span></label>
           <select id="f-type"
             class="w-full bg-stone-700 border border-stone-600 text-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors">
@@ -710,14 +728,33 @@ document.querySelectorAll('.opt-card').forEach(card => {
   });
 });
 
+// TG username validator
+function validateTG(val) {
+  return /^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(val.trim());
+}
+function normTG(val) {
+  const clean = val.trim().replace(/^@/, '');
+  return '@' + clean;
+}
+
 // Submit contacts
 document.getElementById('q-submit').addEventListener('click', async () => {
   const name  = document.getElementById('q-name').value.trim();
   const phone = document.getElementById('q-phone').value.trim();
+  const tg    = document.getElementById('q-tg').value.trim();
+
+  const tgErr = document.getElementById('q-tg-error');
+  if (!validateTG(tg)) {
+    tgErr.classList.remove('hidden');
+    document.getElementById('q-tg').focus();
+    return;
+  }
+  tgErr.classList.add('hidden');
   if (!name || !phone) { alert('Пожалуйста, заполните имя и телефон'); return; }
 
   quiz.data.name  = name;
   quiz.data.phone = phone;
+  quiz.data.tg    = normTG(tg);
 
   const priceRange = quiz.calcPrice();
   document.getElementById('q-price-result').textContent = priceRange;
@@ -726,6 +763,7 @@ document.getElementById('q-submit').addEventListener('click', async () => {
   await sendTelegram({
     source: '📊 Квиз-калькулятор',
     name, phone,
+    tg:     quiz.data.tg,
     type:   quiz.data.typeLabel,
     rooms:  quiz.data.roomsLabel,
     when:   quiz.data.whenLabel,
@@ -742,9 +780,20 @@ document.getElementById('final-form').addEventListener('submit', async e => {
 
   const name  = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
+  const tg    = document.getElementById('f-tg').value.trim();
   const type  = document.getElementById('f-type').value;
 
-  await sendTelegram({ source: '📋 Форма «Получить смету»', name, phone, type: type || 'не указан' });
+  const fTgErr = document.getElementById('f-tg-error');
+  if (!validateTG(tg)) {
+    fTgErr.classList.remove('hidden');
+    document.getElementById('f-tg').focus();
+    btn.disabled = false;
+    btn.textContent = 'Записаться на бесплатный замер →';
+    return;
+  }
+  fTgErr.classList.add('hidden');
+
+  await sendTelegram({ source: '📋 Форма «Получить смету»', name, phone, tg: normTG(tg), type: type || 'не указан' });
 
   document.getElementById('final-form').classList.add('hidden');
   document.getElementById('final-success').classList.remove('hidden');
@@ -782,6 +831,7 @@ async function sendTelegram(d) {
       ``,
       `👤 Имя: ${d.name}`,
       `📱 Телефон: \`${d.phone}\``,
+      d.tg ? `✈️ Telegram: ${d.tg}` : '',
       d.type  ? `🔧 Тип ремонта: ${d.type}` : '',
       d.rooms ? `🛏 Комнат: ${d.rooms}`      : '',
       d.when  ? `⏰ Начать: ${d.when}`        : '',
