@@ -268,8 +268,48 @@ module.exports = async function handler(req, res) {
     return res.status(502).json({ error: 'Telegram send failed' });
   }
 
+  // Try to send DM directly if the user has previously started the bot
+  let dmSent = false;
+  if (kvUrl && kvToken && lead.tg) {
+    try {
+      const chatIdRes = await postJson(kvUrl, kvToken, ['GET', `user:${lead.tg.toLowerCase()}`]);
+      const chatId = chatIdRes.result;
+      if (chatId) {
+        const dmLines = [
+          '<b>Ваша заявка принята!</b>',
+          '',
+          `<b>Имя:</b> ${safeName}`,
+          `<b>Телефон:</b> <code>${safePhone}</code>`,
+          `<b>Telegram:</b> ${safeTg}`,
+          `<b>Тип ремонта:</b> ${safeType}`,
+          `<b>Комнат:</b> ${safeRooms}`,
+          `<b>Когда начать:</b> ${safeWhen}`,
+          `<b>Ориентировочно:</b> ${safePrice}`,
+          '',
+          '<i>Мы свяжемся с вами в ближайшее время 🏠</i>',
+        ].join('\n');
+
+        const dmRes = await fetch(`${tgApi}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: dmLines,
+            parse_mode: 'HTML',
+            disable_web_page_preview: true,
+          }),
+        });
+        const dmJson = await dmRes.json();
+        if (dmRes.ok && dmJson.ok) dmSent = true;
+      }
+    } catch (error) {
+      console.error('Direct DM error:', error);
+    }
+  }
+
   return res.json({
     ok: true,
-    startLink: botUsername ? `https://t.me/${botUsername}?start=${id}` : null,
+    dmSent,
+    startLink: !dmSent && botUsername ? `https://t.me/${botUsername}?start=${id}` : null,
   });
 };
