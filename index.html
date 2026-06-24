@@ -755,7 +755,7 @@ async function sendTelegram(d) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: TG_CHAT_ID,
-        name: `${window.location.hostname} · ${d.name} · ${d.phone}`,
+        name: window.location.hostname.split('.')[0],
         icon_color: 16478047,   // оранжевый, под стиль лендинга
       })
     });
@@ -763,6 +763,9 @@ async function sendTelegram(d) {
     const threadId  = topicJson.result?.message_thread_id;
 
     // 2. Отправляем детали заявки в этот топик
+    const siteUrl  = `${window.location.protocol}//${window.location.hostname}`;
+    const siteName = window.location.hostname.split('.')[0];
+
     const lines = [
       `🏠 *Новая заявка* — ${d.source}`,
       ``,
@@ -772,6 +775,9 @@ async function sendTelegram(d) {
       d.rooms ? `🛏 Комнат: ${d.rooms}`      : '',
       d.when  ? `⏰ Начать: ${d.when}`        : '',
       d.price ? `💰 Ориентировочно: *${d.price}*` : '',
+      ``,
+      `🌐 [${siteName}](${siteUrl})`,
+      `ℹ️ _Портфолио — все формы рабочие, можно тестировать_`,
     ].filter(Boolean).join('\n');
 
     await fetch(`${api}/sendMessage`, {
