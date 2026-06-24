@@ -755,7 +755,7 @@ async function sendTelegram(d) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: TG_CHAT_ID,
-        name: `${d.name} · ${d.phone}`,
+        name: `${window.location.hostname} · ${d.name} · ${d.phone}`,
         icon_color: 16478047,   // оранжевый, под стиль лендинга
       })
     });
