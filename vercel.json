@@ -1,4 +1,12 @@
 {
   "buildCommand": "node -e \"require('fs').writeFileSync('config.js', 'const TG_TOKEN=\\'' + process.env.TG_TOKEN + '\\'; const TG_CHAT_ID=\\'' + process.env.TG_CHAT_ID + '\\';')\"",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "remont-kvartir-eight.vercel.app" }],
+      "destination": "https://remont-kvartir-pf.vercel.app/$1",
+      "permanent": true
+    }
+  ]
 }
