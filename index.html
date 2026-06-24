@@ -23,13 +23,13 @@
               600: '#57534e', 700: '#44403c', 800: '#292524', 900: '#1c1917',
             }
           },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+          fontFamily: { sans: ['Outfit', 'sans-serif'] }
         }
       }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     html { scroll-behavior: smooth; }
@@ -62,6 +62,31 @@
     /* Scroll reveal */
     .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ── Taste Skill upgrades ─────────────── */
+    h1 { text-wrap: balance; letter-spacing: -0.03em; }
+    h2 { text-wrap: balance; letter-spacing: -0.025em; }
+    h3, h4 { letter-spacing: -0.01em; }
+
+    /* Hero ambient glow */
+    .hero-section {
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(251,191,36,.16) 0%, transparent 65%),
+        linear-gradient(165deg, #fefce8 0%, #fafaf9 50%, #ffffff 100%);
+    }
+
+    /* Stat card hover */
+    .stats-grid > div { transition: transform .2s ease, box-shadow .2s ease; }
+    .stats-grid > div:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(217,119,6,.1); }
+
+    /* Staggered grid reveal */
+    .stagger-reveal > * { opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
+    .stagger-reveal > *:nth-child(1) { transition-delay:.05s; }
+    .stagger-reveal > *:nth-child(2) { transition-delay:.15s; }
+    .stagger-reveal > *:nth-child(3) { transition-delay:.25s; }
+    .stagger-reveal > *:nth-child(4) { transition-delay:.35s; }
+    .stagger-reveal > *:nth-child(5) { transition-delay:.45s; }
+    .stagger-reveal.visible > * { opacity:1; transform:translateY(0); }
   </style>
 </head>
 
@@ -89,7 +114,7 @@
       <a href="#cta-form"     class="hover:text-amber-600 transition-colors">Записаться</a>
     </nav>
     <a href="https://t.me/yasprosil_ii" target="_blank" rel="noopener"
-       class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors shrink-0">
+       class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-all shrink-0">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
       </svg>
@@ -99,7 +124,7 @@
 </header>
 
 <!-- ─── HERO ─────────────────────────────── -->
-<section class="pt-36 pb-16 px-4 bg-gradient-to-br from-amber-50 via-stone-50 to-white">
+<section class="pt-36 pb-16 px-4 hero-section">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-12 reveal">
       <span id="free-month-badge" class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider uppercase"></span>
@@ -111,17 +136,17 @@
         Называем цену до начала — и не меняем её в процессе. Берём всё на себя: от проекта до финальной уборки.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="#quiz" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-lg shadow-amber-200">
+        <a href="#quiz" class="bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-lg shadow-amber-300/60">
           Рассчитать стоимость →
         </a>
-        <a href="#before-after" class="bg-white border-2 border-stone-200 hover:border-amber-400 text-stone-700 font-semibold px-8 py-4 rounded-2xl text-lg transition-all">
+        <a href="#before-after" class="bg-white border-2 border-stone-200 hover:border-amber-400 active:scale-95 text-stone-700 font-semibold px-8 py-4 rounded-2xl text-lg transition-all">
           Смотреть работы
         </a>
       </div>
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 stats-grid stagger-reveal">
       <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-stone-100">
         <div class="text-3xl font-black text-amber-600">340+</div>
         <div class="text-sm text-stone-500 mt-1">квартир сдано</div>
@@ -259,7 +284,7 @@
             <p id="q-tg-error" class="text-xs text-red-500 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
           </div>
         </div>
-        <button id="q-submit" class="mt-5 w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-2xl text-lg transition-all shadow-md shadow-amber-200">
+        <button id="q-submit" class="mt-5 w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-4 rounded-2xl text-lg transition-all shadow-md shadow-amber-300/50">
           Получить расчёт бесплатно →
         </button>
         <p class="text-xs text-stone-400 text-center mt-3">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
@@ -364,7 +389,7 @@
       <h2 class="text-3xl md:text-4xl font-black text-stone-900">Выберите свой формат ремонта</h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 stagger-reveal">
       <!-- Косметический -->
       <div class="rounded-3xl border-2 border-stone-100 bg-stone-50 p-8 flex flex-col">
         <div class="text-4xl mb-4">🎨</div>
@@ -379,7 +404,7 @@
           <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Замена дверей и наличников</li>
           <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Монтаж светильников</li>
         </ul>
-        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-semibold py-3 rounded-xl text-center transition-all">
+        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white active:scale-95 font-semibold py-3 rounded-xl text-center transition-all">
           Выбрать пакет
         </a>
       </div>
@@ -402,7 +427,7 @@
           <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Замена сантехники и труб</li>
           <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Натяжные потолки</li>
         </ul>
-        <a href="#cta-form" class="mt-auto bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl text-center transition-all">
+        <a href="#cta-form" class="mt-auto bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-3 rounded-xl text-center transition-all">
           Выбрать пакет
         </a>
       </div>
@@ -421,7 +446,7 @@
           <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Умный дом под ключ</li>
           <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> 3D-визуализация до старта</li>
         </ul>
-        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white font-semibold py-3 rounded-xl text-center transition-all">
+        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white active:scale-95 font-semibold py-3 rounded-xl text-center transition-all">
           Выбрать пакет
         </a>
       </div>
@@ -438,7 +463,7 @@
       <h2 class="text-3xl md:text-4xl font-black text-stone-900">Пять шагов до готовой квартиры</h2>
     </div>
 
-    <div class="grid md:grid-cols-5 gap-4 relative">
+    <div class="grid md:grid-cols-5 gap-4 relative stagger-reveal">
       <!-- connector line desktop -->
       <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-amber-200" style="margin:0 10%"></div>
 
@@ -526,7 +551,7 @@
       <h2 class="text-3xl md:text-4xl font-black text-stone-900">Что говорят клиенты</h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 stagger-reveal">
       <!-- Review 1 -->
       <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
@@ -541,7 +566,7 @@
       </div>
 
       <!-- Review 2 -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+      <div class="bg-amber-50 rounded-2xl p-6 shadow-md border border-amber-100 md:-mt-2 md:-mb-2">
         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
         <p class="text-stone-700 leading-relaxed text-sm mb-6">«Жил в Питере, квартира в Москве. Фото каждый день — видел всё. Приехал только на приёмку. Квартира сияет, ничего не переделывал. Уникальный сервис.»</p>
         <div class="flex items-center gap-3">
@@ -611,7 +636,7 @@
         </div>
       </div>
       <button type="submit"
-        class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-xl text-lg transition-all">
+        class="w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-4 rounded-xl text-lg transition-all">
         Записаться на бесплатный замер →
       </button>
       <p class="text-xs text-stone-500 text-center mt-3">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
@@ -664,7 +689,7 @@ document.getElementById('free-month-badge').textContent = `Свободны на
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal, .stagger-reveal').forEach(el => io.observe(el));
 
 /* ── Smooth scroll offset ──────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
