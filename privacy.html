@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Политика конфиденциальности — РемКвартира</title>
+  <meta name="description" content="Политика конфиденциальности РемКвартира: какие данные мы собираем через форму заявки и как их используем." />
+  <link rel="canonical" href="https://remont-kvartir-pf.vercel.app/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Outfit', 'sans-serif'] } } } }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>h1,h2{letter-spacing:-0.02em}</style>
+</head>
+
+<body class="font-sans bg-stone-50 text-stone-800 antialiased">
+
+<header class="border-b border-stone-100 bg-white">
+  <div class="max-w-3xl mx-auto px-4 h-16 flex items-center">
+    <a href="/" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+      <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white text-lg font-black leading-none">Р</div>
+      <span class="font-bold text-stone-900 text-lg">РемКвартира</span>
+    </a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-12">
+  <a href="/" class="text-sm text-amber-600 hover:text-amber-700 font-medium">← На главную</a>
+
+  <h1 class="text-3xl md:text-4xl font-black text-stone-900 mt-4 mb-2">Политика конфиденциальности</h1>
+  <p class="text-stone-400 text-sm mb-8">Обновлено: <span id="upd-date"></span></p>
+
+  <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-sm text-stone-600 mb-10">
+    Это демонстрационный сайт-портфолио. Реальная коммерческая деятельность не ведётся, заявки используются только для проверки работы форм.
+  </div>
+
+  <div class="space-y-8 text-stone-600 leading-relaxed">
+    <section>
+      <h2 class="text-xl font-bold text-stone-900 mb-2">1. Какие данные мы собираем</h2>
+      <p>Через форму заявки на сайте мы получаем: имя, номер телефона, Telegram-никнейм, а также параметры будущего ремонта (тип, площадь, желаемые сроки), которые вы указываете сами.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-stone-900 mb-2">2. Зачем мы их используем</h2>
+      <p>Данные нужны только для того, чтобы связаться с вами, рассчитать стоимость ремонта и согласовать бесплатный замер. Мы не передаём их третьим лицам и не используем для рассылок без вашего согласия.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-stone-900 mb-2">3. Где хранятся данные</h2>
+      <p>Заявка передаётся менеджеру в Telegram и временно хранится в защищённом облачном хранилище не дольше 24 часов, после чего удаляется автоматически.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-stone-900 mb-2">4. Ваши права</h2>
+      <p>Вы можете в любой момент попросить удалить ваши данные — для этого достаточно написать нам в Telegram. Мы удалим всю информацию о вашей заявке.</p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-stone-900 mb-2">5. Согласие</h2>
+      <p>Отправляя форму на сайте, вы подтверждаете, что ознакомились с этой политикой и согласны на обработку указанных данных в описанных выше целях.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="bg-stone-950 text-stone-500 py-8 px-4 mt-12">
+  <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+    <span class="font-bold text-stone-300">РемКвартира</span>
+    <div class="flex gap-6 text-xs">
+      <a href="/privacy.html" class="text-stone-300">Политика конфиденциальности</a>
+      <a href="/offer.html" class="hover:text-stone-300 transition-colors">Договор оферты</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('upd-date').textContent = new Date().toLocaleDateString('ru');</script>
+</body>
+</html>
