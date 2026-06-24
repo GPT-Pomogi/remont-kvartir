@@ -46,8 +46,8 @@ module.exports = async function handler(req, res) {
   const msg = update?.message;
   if (!msg) return res.json({ ok: true });
 
-  const kvUrl = process.env.UPSTASH_REDIS_REST_URL;
-  const kvToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const kvUrl = process.env.KV_REST_API_URL;
+  const kvToken = process.env.KV_REST_API_TOKEN;
   const tgToken = process.env.TG_TOKEN;
   if (!tgToken) {
     return res.status(500).json({ error: 'Server is not configured' });

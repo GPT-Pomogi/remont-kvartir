@@ -174,8 +174,8 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid payload' });
   }
 
-  const kvUrl = process.env.UPSTASH_REDIS_REST_URL;
-  const kvToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const kvUrl = process.env.KV_REST_API_URL;
+  const kvToken = process.env.KV_REST_API_TOKEN;
 
   try {
     await rateLimit(req, kvUrl, kvToken);
