@@ -135,3 +135,13 @@
 - Интеграция с Telegram Bot API — заявки создают топик в группе
 - Деплой на Vercel, секреты в переменных окружения
 - Репозиторий: [GPT-Pomogi/remont-kvartir](https://github.com/GPT-Pomogi/remont-kvartir)
+
+## Переменные окружения
+
+- `TG_TOKEN` — токен Telegram-бота
+- `TG_CHAT_ID` — ID Telegram-группы/форума для заявок
+- `UPSTASH_REDIS_REST_URL` — URL Upstash Redis REST API
+- `UPSTASH_REDIS_REST_TOKEN` — токен Upstash Redis REST API
+- `ALLOWED_ORIGIN` — необязательный разрешённый origin для `POST /api/submit`
+- `TG_WEBHOOK_SECRET` — необязательный secret token для Telegram webhook
+- `WEBHOOK_SETUP_SECRET` — секрет для защищённого вызова `POST /api/set-webhook`
