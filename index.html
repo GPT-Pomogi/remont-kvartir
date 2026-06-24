@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ремонт квартир под ключ — фиксированная смета, гарантия 2 года</title>
-  <meta name="description" content="Ремонт квартир под ключ. Фиксированная смета — цена не вырастет. Гарантия 2 года. Бесплатный замер за 24 часа." />
+  <title>Ремонт квартир под ключ в Москве — фиксированная смета, гарантия 2 года</title>
+  <meta name="description" content="Ремонт квартир под ключ в Москве с фиксированной сметой. Цена фиксируется в договоре и не изменится. Гарантия 2 года. Бесплатный замер за 24 часа." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://remont-kvartir-pf.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://remont-kvartir-pf.vercel.app/" />
+  <meta property="og:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета, гарантия 2 года" />
+  <meta property="og:description" content="Ремонт квартир под ключ в Москве с фиксированной сметой. Цена не изменится. Гарантия 2 года. Бесплатный замер за 24 часа." />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="ru_RU" />
+  <meta property="og:site_name"   content="РемКвартира" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета" />
+  <meta name="twitter:description" content="Ремонт квартир под ключ с фиксированной сметой. Гарантия 2 года. Бесплатный замер за 24 часа." />
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -28,6 +48,78 @@
       }
     }
   </script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "name": "РемКвартира",
+    "description": "Ремонт квартир под ключ в Москве с фиксированной сметой. Гарантия 2 года на все виды работ.",
+    "url": "https://remont-kvartir-pf.vercel.app",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "areaServed": { "@type": "City", "name": "Москва" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "340",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Виды ремонта квартир",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Косметический ремонт квартиры",
+            "description": "Замена обоев, покраска стен, укладка ламината, замена дверей, монтаж светильников"
+          },
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "3500",
+            "priceCurrency": "RUB",
+            "unitText": "м²"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Капитальный ремонт квартиры",
+            "description": "Стяжка пола, штукатурка стен, укладка плитки, замена электропроводки и сантехники"
+          },
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "8500",
+            "priceCurrency": "RUB",
+            "unitText": "м²"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Дизайнерский ремонт квартиры",
+            "description": "Авторский дизайн-проект, итальянская плитка, встроенная мебель на заказ, умный дом"
+          },
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "18000",
+            "priceCurrency": "RUB",
+            "unitText": "м²"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -335,11 +427,11 @@
       <div>
         <p class="font-semibold text-stone-700 mb-3 text-center">Гостиная, 2-комнатная квартира</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
-          <img class="ba-before w-full h-full object-cover"
+          <img class="ba-before w-full h-full object-cover" loading="lazy"
             src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — гостиная" />
-          <img class="ba-after-img"
+          <img class="ba-after-img" loading="lazy"
             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
             alt="После ремонта — гостиная" />
           <span class="ba-badge" style="left:14px">ДО</span>
@@ -359,11 +451,11 @@
       <div>
         <p class="font-semibold text-stone-700 mb-3 text-center">Кухня, капитальный ремонт</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
-          <img class="ba-before w-full h-full object-cover"
+          <img class="ba-before w-full h-full object-cover" loading="lazy"
             src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — кухня" />
-          <img class="ba-after-img"
+          <img class="ba-after-img" loading="lazy"
             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
             alt="После ремонта — кухня" />
           <span class="ba-badge" style="left:14px">ДО</span>
