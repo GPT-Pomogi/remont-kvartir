@@ -105,7 +105,7 @@
 <section class="pt-36 pb-16 px-4 bg-gradient-to-br from-amber-50 via-stone-50 to-white">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider uppercase">Свободны на июль — принимаем заявки</span>
+      <span id="free-month-badge" class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider uppercase"></span>
       <h1 class="text-4xl md:text-6xl font-black text-stone-900 leading-tight mb-6">
         Ремонт квартир под ключ<br/>
         <span class="text-amber-600">с фиксированной сметой</span>
@@ -641,6 +641,12 @@
 <script>
 /* ── Copyright year ────────────────────── */
 document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+/* ── Free month badge ───────────────────── */
+const MONTHS_RU = ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+const nextMonth = new Date(); nextMonth.setMonth(nextMonth.getMonth() + 1);
+const monthName = MONTHS_RU[nextMonth.getMonth()];
+document.getElementById('free-month-badge').textContent = `Свободны на ${monthName} — принимаем заявки`;
 
 /* ── Scroll reveal ─────────────────────── */
 const io = new IntersectionObserver(entries => {
