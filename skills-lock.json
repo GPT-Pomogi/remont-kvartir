@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "landing-page": {
+      "source": "whawkinsiv/claude-code-skills",
+      "sourceType": "github",
+      "skillPath": "skills/landing-page/SKILL.md",
+      "computedHash": "c39be5ab9b0e1fc0cfa0fffc39f34af027a432a061a92dd52d4aacdaff9efc2b"
+    }
+  }
+}
