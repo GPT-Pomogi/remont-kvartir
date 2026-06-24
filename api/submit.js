@@ -224,7 +224,7 @@ module.exports = async function handler(req, res) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: tgChatId,
-        name: `Заявка: ${lead.name}`.slice(0, 120),
+        name: lead.siteName,
         icon_color: 16478047,
       }),
     });
