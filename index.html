@@ -67,9 +67,6 @@
 
 <body class="font-sans bg-stone-50 text-stone-800 antialiased">
 
-<!-- ⚙️ Конфигурация Telegram — токен и chat_id в config.js -->
-<script src="config.js"></script>
-
 <!-- ─── PORTFOLIO BANNER ─────────────────── -->
 <div class="fixed top-0 inset-x-0 z-[60] bg-stone-900 text-white text-center text-xs font-medium py-2 px-4">
   🗂 <strong>Портфолио-проект</strong> — сайт полностью рабочий, все формы работают. Можете протестировать!
@@ -280,11 +277,16 @@
           <p class="text-xs text-stone-400 mt-2">Точная цена — после бесплатного замера</p>
         </div>
 
-        <div class="text-left space-y-2 text-sm text-stone-600">
+        <div class="text-left space-y-2 text-sm text-stone-600 mb-6">
           <div class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Цена зафиксирована в договоре</div>
           <div class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Замерщик приедет за 24 часа</div>
           <div class="flex items-center gap-2"><span class="text-amber-500 font-bold">✓</span> Гарантия на все виды работ</div>
         </div>
+
+        <a id="q-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 bg-[#229ED9] hover:bg-[#1a8bbf] text-white font-bold py-3.5 rounded-2xl transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Получить копию заявки в Telegram
+        </a>
       </div>
     </div>
   </div>
@@ -615,7 +617,11 @@
     <div id="final-success" class="hidden bg-stone-800 rounded-2xl p-10 text-center">
       <div class="text-5xl mb-4">✅</div>
       <h3 class="text-2xl font-bold mb-2">Заявка принята!</h3>
-      <p class="text-stone-400">Перезвоним в течение 30 минут и согласуем удобное время замера.</p>
+      <p class="text-stone-400 mb-6">Перезвоним в течение 30 минут и согласуем удобное время замера.</p>
+      <a id="f-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 bg-[#229ED9] hover:bg-[#1a8bbf] text-white font-bold py-3.5 rounded-2xl transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Получить копию заявки в Telegram
+      </a>
     </div>
   </div>
 </section>
@@ -768,7 +774,7 @@ document.getElementById('q-submit').addEventListener('click', async () => {
   document.getElementById('q-price-result').textContent = priceRange;
   quiz.goTo(5);
 
-  await sendTelegram({
+  submitToApi({
     source: '📊 Квиз-калькулятор',
     name, phone,
     tg:     quiz.data.tg,
@@ -776,6 +782,12 @@ document.getElementById('q-submit').addEventListener('click', async () => {
     rooms:  quiz.data.roomsLabel,
     when:   quiz.data.whenLabel,
     price:  priceRange
+  }).then(link => {
+    if (link) {
+      const btn = document.getElementById('q-tg-link');
+      btn.href = link;
+      btn.classList.remove('hidden');
+    }
   });
 });
 
@@ -801,66 +813,34 @@ document.getElementById('final-form').addEventListener('submit', async e => {
   }
   fTgErr.classList.add('hidden');
 
-  await sendTelegram({ source: '📋 Форма «Получить смету»', name, phone, tg: normTG(tg), type: type || 'не указан' });
-
   document.getElementById('final-form').classList.add('hidden');
   document.getElementById('final-success').classList.remove('hidden');
+
+  submitToApi({ source: '📋 Форма «Получить смету»', name, phone, tg: normTG(tg), type: type || 'не указан' })
+    .then(link => {
+      if (link) {
+        const btn = document.getElementById('f-tg-link');
+        btn.href = link;
+        btn.classList.remove('hidden');
+      }
+    });
 });
 
-/* ── Telegram sender — топик на каждую заявку ── */
-async function sendTelegram(d) {
-  if (TG_CHAT_ID === 'ВСТАВЬТЕ_CHAT_ID') {
-    console.warn('Telegram: chat_id не настроен. Данные:', d);
-    return;
-  }
-
-  const api = `https://api.telegram.org/bot${TG_TOKEN}`;
-
+/* ── API submit — отправка через серверную функцию ── */
+async function submitToApi(d) {
+  d.siteUrl  = `${location.protocol}//${location.hostname}`;
+  d.siteName = location.hostname.split('.')[0];
   try {
-    // 1. Создаём топик с именем поддомена
-    const topicRes = await fetch(`${api}/createForumTopic`, {
-      method: 'POST',
+    const res  = await fetch('/api/submit', {
+      method:  'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TG_CHAT_ID,
-        name: window.location.hostname.split('.')[0],
-        icon_color: 16478047,   // оранжевый, под стиль лендинга
-      })
+      body:    JSON.stringify(d),
     });
-    const topicJson = await topicRes.json();
-    const threadId  = topicJson.result?.message_thread_id;
-
-    // 2. Отправляем детали заявки в этот топик
-    const siteUrl  = `${window.location.protocol}//${window.location.hostname}`;
-    const siteName = window.location.hostname.split('.')[0];
-
-    const lines = [
-      `🏠 *Новая заявка* — ${d.source}`,
-      ``,
-      `👤 Имя: ${d.name}`,
-      `📱 Телефон: \`${d.phone}\``,
-      d.tg ? `✈️ Telegram: ${d.tg}` : '',
-      d.type  ? `🔧 Тип ремонта: ${d.type}` : '',
-      d.rooms ? `🛏 Комнат: ${d.rooms}`      : '',
-      d.when  ? `⏰ Начать: ${d.when}`        : '',
-      d.price ? `💰 Ориентировочно: *${d.price}*` : '',
-      ``,
-      `🌐 [${siteName}](${siteUrl})`,
-      `ℹ️ _Портфолио — все формы рабочие, можно тестировать_`,
-    ].filter(Boolean).join('\n');
-
-    await fetch(`${api}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TG_CHAT_ID,
-        message_thread_id: threadId,
-        text: lines,
-        parse_mode: 'Markdown'
-      })
-    });
+    const json = await res.json();
+    return json.startLink ?? null;
   } catch (err) {
-    console.error('Telegram error:', err);
+    console.error('Submit error:', err);
+    return null;
   }
 }
 </script>
