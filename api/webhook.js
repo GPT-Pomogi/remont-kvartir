@@ -8,14 +8,13 @@ module.exports = async function handler(req, res) {
     const id = msg.text.split(' ')[1]?.trim();
     let text;
 
-    if (id && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+    const KV_URL   = process.env.UPSTASH_REDIS_REST_URL;
+    const KV_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+    if (id && KV_URL && KV_TOKEN) {
       try {
-        const kvRes = await fetch(process.env.KV_REST_API_URL, {
+        const kvRes = await fetch(KV_URL, {
           method: 'POST',
-          headers: {
-            Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}`,
-            'Content-Type': 'application/json',
-          },
+          headers: { Authorization: `Bearer ${KV_TOKEN}`, 'Content-Type': 'application/json' },
           body: JSON.stringify(['GET', `s:${id}`]),
         });
         const { result } = await kvRes.json();

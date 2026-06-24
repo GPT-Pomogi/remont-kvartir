@@ -6,15 +6,14 @@ module.exports = async function handler(req, res) {
   const d = req.body;
   const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
 
-  // Save to Vercel KV with 24h TTL
-  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+  // Save to Upstash Redis with 24h TTL
+  const KV_URL   = process.env.UPSTASH_REDIS_REST_URL;
+  const KV_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (KV_URL && KV_TOKEN) {
     try {
-      await fetch(process.env.KV_REST_API_URL, {
+      await fetch(KV_URL, {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
+        headers: { Authorization: `Bearer ${KV_TOKEN}`, 'Content-Type': 'application/json' },
         body: JSON.stringify(['SET', `s:${id}`, JSON.stringify(d), 'EX', '86400']),
       });
     } catch (e) {
