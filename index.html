@@ -46,7 +46,7 @@
     /* Before/After slider */
     .ba-wrap { position:relative; overflow:hidden; border-radius:20px; user-select:none; cursor:ew-resize; }
     .ba-before { display:block; width:100%; height:100%; object-fit:cover; }
-    .ba-after-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; clip-path:inset(0 50% 0 0); transition:clip-path 0s; }
+    .ba-after-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; clip-path:inset(0 0 0 50%); transition:clip-path 0s; }
     .ba-line { position:absolute; top:0; bottom:0; left:50%; width:3px; background:white; transform:translateX(-50%); pointer-events:none; z-index:10; }
     .ba-knob { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:white; border-radius:50%; box-shadow:0 4px 20px rgba(0,0,0,.25); display:flex; align-items:center; justify-content:center; pointer-events:none; z-index:11; }
     .ba-range { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; z-index:20; margin:0; }
@@ -643,7 +643,7 @@ document.querySelectorAll('.ba-wrap').forEach(wrap => {
 
   function move(v) {
     v = Math.max(0, Math.min(100, v));
-    after.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+    after.style.clipPath = `inset(0 0 0 ${100 - v}%)`;
     line.style.left  = v + '%';
   }
 
