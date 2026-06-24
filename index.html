@@ -631,7 +631,7 @@
       <a href="#" class="hover:text-stone-300 transition-colors">Политика конфиденциальности</a>
       <a href="#" class="hover:text-stone-300 transition-colors">Договор оферты</a>
     </div>
-    <p class="text-xs">© 2024 РемКвартира. Все права защищены.</p>
+    <p class="text-xs">© <span id="copy-year"></span> РемКвартира. Все права защищены.</p>
   </div>
 </footer>
 
@@ -639,6 +639,9 @@
      JAVASCRIPT
 ════════════════════════════════════════════ -->
 <script>
+/* ── Copyright year ────────────────────── */
+document.getElementById('copy-year').textContent = new Date().getFullYear();
+
 /* ── Scroll reveal ─────────────────────── */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
@@ -655,10 +658,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ── Before / After slider ─────────────── */
 document.querySelectorAll('.ba-wrap').forEach(wrap => {
-  const range  = wrap.querySelector('.ba-range');
-  const after  = wrap.querySelector('.ba-after-img');
-  const line   = wrap.querySelector('.ba-line');
-  const knob   = wrap.querySelector('.ba-knob');
+  const range = wrap.querySelector('.ba-range');
+  const after = wrap.querySelector('.ba-after-img');
+  const line  = wrap.querySelector('.ba-line');
 
   function move(v) {
     v = Math.max(0, Math.min(100, v));
@@ -809,7 +811,7 @@ async function sendTelegram(d) {
   const api = `https://api.telegram.org/bot${TG_TOKEN}`;
 
   try {
-    // 1. Создаём новый топик: «Имя · телефон»
+    // 1. Создаём топик с именем поддомена
     const topicRes = await fetch(`${api}/createForumTopic`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
