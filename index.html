@@ -13,7 +13,7 @@
   <meta property="og:url"         content="https://remont-kvartir-pf.vercel.app/" />
   <meta property="og:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета, гарантия 2 года" />
   <meta property="og:description" content="Ремонт квартир под ключ в Москве с фиксированной сметой. Цена не изменится. Гарантия 2 года. Бесплатный замер за 24 часа." />
-  <meta property="og:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale"      content="ru_RU" />
@@ -23,7 +23,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета" />
   <meta name="twitter:description" content="Ремонт квартир под ключ с фиксированной сметой. Гарантия 2 года. Бесплатный замер за 24 часа." />
-  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/styles.css" />
@@ -101,7 +101,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2Afamily=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     html { scroll-behavior: smooth; }
@@ -135,460 +135,23 @@
     .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    body.font-sans { font-family: 'Manrope', sans-serif; }
-    h1 { text-wrap: balance; letter-spacing: -0.05em; }
-    h2 { text-wrap: balance; letter-spacing: -0.035em; }
-    h3, h4 { letter-spacing: -0.02em; }
+    /* ── Taste Skill upgrades ─────────────── */
+    h1 { text-wrap: balance; letter-spacing: -0.03em; }
+    h2 { text-wrap: balance; letter-spacing: -0.025em; }
+    h3, h4 { letter-spacing: -0.01em; }
 
-    .serif-accent {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      letter-spacing: -0.045em;
-    }
-
-    .nav-shell {
-      background: rgba(255, 252, 247, .82);
-      border: 1px solid rgba(217, 119, 6, .08);
-      box-shadow: 0 12px 34px rgba(28, 25, 23, .06);
-      backdrop-filter: blur(18px);
-    }
-
-    .top-banner {
-      z-index: 60;
-      background: rgba(255, 252, 247, .92);
-      color: #78716c;
-      border-bottom: 1px solid rgba(120, 53, 15, .08);
-      backdrop-filter: blur(12px);
-    }
-
+    /* Hero ambient glow */
     .hero-section {
-      position: relative;
-      overflow: hidden;
       background:
-        radial-gradient(circle at 14% 22%, rgba(251,191,36,.20), transparent 30%),
-        radial-gradient(circle at 86% 14%, rgba(245,158,11,.14), transparent 22%),
-        linear-gradient(180deg, #fffaf2 0%, #fffdf9 34%, #f7f2ea 100%);
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(251,191,36,.16) 0%, transparent 65%),
+        linear-gradient(165deg, #fefce8 0%, #fafaf9 50%, #ffffff 100%);
     }
 
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      inset: 84px auto auto -120px;
-      width: 420px;
-      height: 420px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(217,119,6,.12), rgba(217,119,6,0));
-      pointer-events: none;
-      filter: blur(8px);
-    }
+    /* Stat card hover */
+    .stats-grid > div { transition: transform .2s ease, box-shadow .2s ease; }
+    .stats-grid > div:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(217,119,6,.1); }
 
-    .hero-shell {
-      position: relative;
-      border-radius: 36px;
-      padding: 1.25rem;
-      border: 1px solid rgba(120, 53, 15, .08);
-      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,253,249,.98));
-      box-shadow: 0 24px 72px rgba(28, 25, 23, .06);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(217, 119, 6, .18);
-      background: rgba(255, 251, 235, .88);
-      color: #b45309;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 9999px;
-      background: rgba(254, 243, 199, .9);
-      color: #b45309;
-      font-size: .75rem;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      padding: .375rem 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-title {
-      font-size: clamp(3rem, 5vw, 5.4rem);
-      line-height: .9;
-      color: #1c1917;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title span { display: block; }
-
-    .hero-title-accent {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      color: #d97706;
-      line-height: .88;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-lead {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: #78716c;
-      max-width: 36rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-btn,
-    .hero-btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      min-height: 56px;
-      border-radius: 22px;
-      font-size: 1.0625rem;
-      font-weight: 800;
-      transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
-    }
-
-    .hero-btn {
-      background: #f59e0b;
-      color: #fff;
-      box-shadow: 0 18px 40px rgba(251,191,36,.35);
-    }
-
-    .hero-btn:hover { background: #d97706; }
-
-    .hero-btn-secondary {
-      background: rgba(255,255,255,.9);
-      color: #292524;
-      border: 1px solid #e7e5e4;
-    }
-
-    .hero-btn-secondary:hover {
-      border-color: #fbbf24;
-      color: #d97706;
-    }
-
-    .hero-btn:active,
-    .hero-btn-secondary:active,
-    .tg-btn:active {
-      transform: scale(.98);
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 580px;
-      border-radius: 32px;
-      overflow: hidden;
-      background: #efe7db;
-      box-shadow: 0 22px 65px rgba(68, 64, 60, .14);
-    }
-
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(28,25,23,.04), rgba(28,25,23,.18));
-    }
-
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.02);
-    }
-
-    .hero-floating-card,
-    .hero-floating-note {
-      position: absolute;
-      z-index: 3;
-      border: 1px solid rgba(255,255,255,.6);
-      background: rgba(255,252,248,.92);
-      box-shadow: 0 14px 32px rgba(28,25,23,.12);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-floating-card {
-      top: 24px;
-      left: 24px;
-      border-radius: 24px;
-      padding: 1rem 1.25rem;
-      max-width: 220px;
-    }
-
-    .hero-floating-note {
-      right: 24px;
-      bottom: 24px;
-      max-width: 280px;
-      border-radius: 26px;
-      padding: 1.25rem;
-    }
-
-    .hero-floating-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .22em;
-      color: #a8a29e;
-      font-weight: 800;
-      margin-bottom: .5rem;
-    }
-
-    .package-card {
-      display: flex;
-      flex-direction: column;
-      border-radius: 30px;
-      padding: 2rem;
-      border: 1px solid rgba(120, 53, 15, .10);
-      background: rgba(255,255,255,.88);
-      box-shadow: 0 20px 55px rgba(28,25,23,.06);
-      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-    }
-
-    .package-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 26px 60px rgba(28,25,23,.10);
-      border-color: rgba(217,119,6,.22);
-    }
-
-    .package-card-featured {
-      position: relative;
-      margin-top: -12px;
-      margin-bottom: -12px;
-      border-color: rgba(217,119,6,.24);
-      box-shadow: 0 26px 70px rgba(217,119,6,.12);
-    }
-
-    .package-badge {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: .45rem 1rem;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, #fbbf24, #d97706);
-      color: #fff;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      box-shadow: 0 12px 30px rgba(217,119,6,.22);
-    }
-
-    .package-icon {
-      width: 4rem;
-      height: 4rem;
-      border-radius: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(180deg, rgba(254,243,199,.95), rgba(255,251,235,.88));
-      border: 1px solid rgba(217,119,6,.12);
-    }
-
-    .package-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #1c1917;
-      margin-bottom: .25rem;
-    }
-
-    .package-subtitle {
-      font-size: .9375rem;
-      color: #78716c;
-      margin-bottom: 1rem;
-    }
-
-    .package-price {
-      font-size: 2rem;
-      line-height: 1;
-      font-weight: 900;
-      color: #d97706;
-      margin-bottom: .4rem;
-    }
-
-    .package-price span {
-      font-size: .95rem;
-      font-weight: 700;
-      color: #78716c;
-    }
-
-    .package-meta {
-      font-size: .8rem;
-      color: #a8a29e;
-      margin-bottom: 1.25rem;
-    }
-
-    .package-list {
-      display: grid;
-      gap: .65rem;
-      margin-bottom: 1.5rem;
-      color: #44403c;
-      font-size: .94rem;
-      flex: 1;
-    }
-
-    .package-list li {
-      display: flex;
-      gap: .6rem;
-      align-items: flex-start;
-    }
-
-    .package-list span {
-      color: #d97706;
-      font-weight: 900;
-      line-height: 1.4;
-    }
-
-    .package-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3.15rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(217,119,6,.45);
-      color: #b45309;
-      font-weight: 800;
-      transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
-    }
-
-    .package-link:hover {
-      background: rgba(254,243,199,.9);
-      border-color: rgba(217,119,6,.65);
-      transform: translateY(-1px);
-    }
-
-    .package-link-filled {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 14px 32px rgba(217,119,6,.22);
-    }
-
-    .package-link-filled:hover {
-      background: linear-gradient(135deg, #fbbf24, #d97706);
-      color: #fff;
-    }
-
-    .hero-metric-bar {
-      border: 1px solid rgba(120, 53, 15, .08);
-      background: rgba(255,255,255,.84);
-      box-shadow: 0 14px 40px rgba(28,25,23,.05);
-      border-radius: 30px;
-      padding: 1rem;
-      margin-top: 1.5rem;
-    }
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-      max-width: 42rem;
-    }
-
-    .tg-btn {
-      background: #229ED9;
-      color: #fff;
-      border-radius: 18px;
-    }
-
-    .tg-btn:hover { background: #1a8bbf; }
-
-    .final-section {
-      background:
-        radial-gradient(circle at 20% 0%, rgba(251,191,36,.15), transparent 30%),
-        linear-gradient(180deg, #fffdf9 0%, #f7f2ea 100%);
-    }
-
-    .final-shell {
-      max-width: 42rem;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .final-form {
-      background: rgba(255,255,255,.86);
-      border: 1px solid rgba(120, 53, 15, .08);
-      border-radius: 32px;
-      padding: 2rem;
-      box-shadow: 0 24px 70px rgba(28,25,23,.08);
-      text-align: left;
-    }
-
-    .final-success {
-      background: rgba(255,255,255,.9);
-      border: 1px solid rgba(120, 53, 15, .08);
-      border-radius: 32px;
-      padding: 2.5rem;
-      text-align: center;
-      box-shadow: 0 24px 70px rgba(28,25,23,.08);
-    }
-
-    .footer-shell {
-      background: linear-gradient(180deg, #f7f2ea 0%, #efebe3 100%);
-      color: #78716c;
-      border-top: 1px solid rgba(120, 53, 15, .08);
-    }
-
-    #quiz .bg-stone-50 {
-      background: linear-gradient(180deg, rgba(255,252,247,.94), rgba(250,250,249,.98));
-      box-shadow: 0 24px 80px rgba(28,25,23,.06);
-    }
-
-    #before-after .ba-wrap {
-      border: 1px solid rgba(120, 53, 15, .08);
-      box-shadow: 0 24px 65px rgba(28,25,23,.10);
-    }
-    #reviews .rounded-2xl,
-    #guarantees .g-card {
-      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-    }
-
-    #reviews .rounded-2xl:hover,
-    #guarantees .g-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 55px rgba(28,25,23,.10);
-    }
-
-    #stages .text-center.relative {
-      border: 1px solid rgba(217, 119, 6, .10);
-      background: rgba(255,255,255,.68);
-      border-radius: 28px;
-      padding: 24px 16px 18px;
-      box-shadow: 0 18px 45px rgba(217,119,6,.06);
-    }
-
-    #stages .text-center.relative .w-16 {
-      margin-top: -8px;
-    }
-
-    .stats-grid > div {
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-
-    .stats-grid > div:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 38px rgba(217,119,6,.10);
-      border-color: rgba(217,119,6,.18);
-    }
-
+    /* Staggered grid reveal */
     .stagger-reveal > * { opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
     .stagger-reveal > *:nth-child(1) { transition-delay:.05s; }
     .stagger-reveal > *:nth-child(2) { transition-delay:.15s; }
@@ -596,58 +159,22 @@
     .stagger-reveal > *:nth-child(4) { transition-delay:.35s; }
     .stagger-reveal > *:nth-child(5) { transition-delay:.45s; }
     .stagger-reveal.visible > * { opacity:1; transform:translateY(0); }
-
-    @media (min-width: 640px) {
-      .hero-actions { flex-direction: row; }
-    }
-
-    @media (max-width: 1023px) {
-      .hero-visual { min-height: 420px; }
-      .hero-floating-card { top: 16px; left: 16px; }
-      .hero-floating-note { right: 16px; bottom: 16px; max-width: 240px; }
-    }
-
-    @media (max-width: 767px) {
-      .nav-shell {
-        border-left: 0;
-        border-right: 0;
-        border-radius: 0;
-      }
-
-      .hero-shell {
-        border-radius: 28px;
-      }
-
-      .hero-visual {
-        min-height: 320px;
-        border-radius: 26px;
-      }
-
-      .hero-floating-card,
-      .hero-floating-note {
-        position: static;
-        margin-top: 14px;
-      }
-    }
   </style>
 </head>
 
 <body class="font-sans bg-stone-50 text-stone-800 antialiased">
 
 <!-- ─── PORTFOLIO BANNER ─────────────────── -->
-<div class="fixed top-0 inset-x-0 top-banner bg-stone-900 text-white text-center text-xs font-medium py-2 px-4">
+<div class="fixed top-0 inset-x-0 z-[60] bg-stone-900 text-white text-center text-xs font-medium py-2 px-4">
   🗂 <strong>Портфолио-проект</strong> — сайт полностью рабочий, все формы работают. Можете протестировать!
 </div>
 
 <!-- ─── NAV ──────────────────────────────── -->
-<header class="fixed top-8 inset-x-0 z-50 px-3 md:px-4">
-  <div class="nav-shell max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between gap-4" style="min-height:72px;">
-    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity shrink-0">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-xl font-black leading-none shadow-lg shadow-amber-300/60">Р</div>
-      <div class="leading-tight">
-        <div class="font-extrabold text-stone-900 text-lg">РемКвартира</div>
-        <div class="hidden sm:block text-xs text-stone-500">Ремонт квартир под ключ в Москве</div>
-      </div>
+<header class="fixed top-8 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-stone-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+      <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white text-lg font-black leading-none">Р</div>
+      <span class="font-bold text-stone-900 text-lg">РемКвартира</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm font-medium text-stone-500">
       <a href="#quiz"         class="hover:text-amber-600 transition-colors">Калькулятор</a>
@@ -658,12 +185,8 @@
       <a href="#reviews"      class="hover:text-amber-600 transition-colors">Отзывы</a>
       <a href="#cta-form"     class="hover:text-amber-600 transition-colors">Записаться</a>
     </nav>
-    <div class="hidden xl:flex items-center gap-4 text-right mr-2">
-      <div class="text-sm font-extrabold text-stone-900">8 (800) 555-57-57</div>
-      <div class="text-xs text-stone-500">Ежедневно с 9:00 до 21:00</div>
-    </div>
     <a href="https://t.me/yasprosil_ii" target="_blank" rel="noopener"
-       class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-bold px-4 md:px-5 py-2.5 rounded-2xl transition-all shadow-lg shadow-amber-300/40 shrink-0">
+       class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-all shrink-0">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
       </svg>
@@ -674,135 +197,43 @@
 
 <!-- ─── HERO ─────────────────────────────── -->
 <section class="pt-36 pb-16 px-4 hero-section">
-  <div class="max-w-6xl mx-auto">
-    <div class="hero-shell">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <div class="hero-kicker text-xs md:text-sm font-extrabold uppercase px-4 py-2 mb-6">
-            <span class="inline-flex w-7 h-7 rounded-full bg-white items-center justify-center text-amber-600 shadow-sm">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Фиксируем смету в договоре</span>
-          </div>
-
-          <p id="free-month-badge" class="hero-chip"></p>
-
-          <h1 class="hero-title">
-            Ремонт квартир
-            <span class="block">под ключ</span>
-            <span class="block hero-title-accent">с фиксированной сметой</span>
-          </h1>
-
-          <p class="hero-lead">
-            Называем цену до начала работ и не меняем её в процессе. Берём на себя всё: замер, материалы, контроль сроков и финальную сдачу квартиры.
-          </p>
-
-          <div class="hero-actions sm:flex-row">
-            <a href="#quiz" class="hero-btn px-6 py-4 gap-3">
-              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M7 8h10M7 12h4M7 16h4M15 12h2M15 16h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-              <div class="text-left">
-                <div class="font-extrabold leading-tight">Рассчитать стоимость</div>
-                <div class="text-xs opacity-75 font-medium mt-0.5">Бесплатно за 1 минуту</div>
-              </div>
-            </a>
-            <a href="#before-after" class="hero-btn-secondary px-6 py-4 gap-3">
-              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                <circle cx="8.5" cy="10" r="1.5" fill="currentColor"/>
-                <path d="M3 17l4-4 3 3 3.5-4 5.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <div class="text-left">
-                <div class="font-extrabold leading-tight">Посмотреть работы</div>
-                <div class="text-xs opacity-70 font-medium mt-0.5">Реальные фото и отзывы</div>
-              </div>
-            </a>
-          </div>
-
-          
-        
-        </div>
-
-        <div class="reveal">
-          <div class="hero-visual">
-            <img
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6Aauto=format&fit=crop&w=1400&q=80"
-              alt="Современный интерьер после ремонта"
-            />
-
-            <div class="hero-floating-card">
-              <div class="hero-floating-label">Режим проекта</div>
-              <div class="text-2xl font-black text-stone-900">8–14 недель</div>
-              <div class="text-sm text-stone-500">капитальный ремонт под ключ</div>
-            </div>
-
-            <div class="hero-floating-note">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 19h16M6 17V8l6-4 6 4v9M9 19v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <div class="font-extrabold text-stone-900 mb-1">Бесплатный выезд инженера</div>
-                  <div class="text-sm text-stone-500 leading-relaxed">Приезжаем, делаем замер, фиксируем задачи и называем реальный бюджет без сюрпризов.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span id="free-month-badge" class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider uppercase"></span>
+      <h1 class="text-4xl md:text-6xl font-black text-stone-900 leading-tight mb-6">
+        Ремонт квартир под ключ<br/>
+        <span class="text-amber-600">с фиксированной сметой</span>
+      </h1>
+      <p class="text-lg md:text-xl text-stone-500 max-w-2xl mx-auto mb-8">
+        Называем цену до начала — и не меняем её в процессе. Берём всё на себя: от проекта до финальной уборки.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#quiz" class="bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-lg shadow-amber-300/60">
+          Рассчитать стоимость →
+        </a>
+        <a href="#before-after" class="bg-white border-2 border-stone-200 hover:border-amber-400 active:scale-95 text-stone-700 font-semibold px-8 py-4 rounded-2xl text-lg transition-all">
+          Смотреть работы
+        </a>
       </div>
+    </div>
 
-      <div class="hero-metric-bar reveal">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 stats-grid">
-          <div class="bg-white rounded-2xl p-5 text-center border border-stone-100">
-            <div class="text-3xl md:text-4xl font-black text-stone-900">340+</div>
-            <div class="text-sm text-stone-500 mt-1">квартир сдано</div>
-            <div class="text-xs text-stone-400 mt-2">с 2016 года</div>
-          </div>
-          <div class="bg-white rounded-2xl p-5 text-center border border-stone-100">
-            <div class="text-3xl md:text-4xl font-black text-stone-900">8 лет</div>
-            <div class="text-sm text-stone-500 mt-1">на рынке</div>
-            <div class="text-xs text-stone-400 mt-2">проверены временем</div>
-          </div>
-          <div class="bg-white rounded-2xl p-5 text-center border border-stone-100">
-            <div class="text-3xl md:text-4xl font-black text-stone-900">2 года</div>
-            <div class="text-sm text-stone-500 mt-1">гарантия</div>
-            <div class="text-xs text-stone-400 mt-2">по договору</div>
-          </div>
-          <div class="bg-white rounded-2xl p-5 text-center border border-stone-100">
-            <div class="text-3xl md:text-4xl font-black text-stone-900">4.9 ★</div>
-            <div class="text-sm text-stone-500 mt-1">средний балл</div>
-            <div class="text-xs text-stone-400 mt-2">по отзывам клиентов</div>
-          </div>
-        </div>
-        <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-stone-500">
-          <div class="flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Работаем по договору</span>
-          </div>
-          <div class="flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
-              <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-            <span>Фиксируем сроки и стоимость</span>
-          </div>
-          <div class="flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M2 10h20" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-            <span>Оплата по этапам, без переплат</span>
-          </div>
-        </div>
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 stats-grid stagger-reveal">
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-stone-100">
+        <div class="text-3xl font-black text-amber-600">340+</div>
+        <div class="text-sm text-stone-500 mt-1">квартир сдано</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-stone-100">
+        <div class="text-3xl font-black text-amber-600">8 лет</div>
+        <div class="text-sm text-stone-500 mt-1">на рынке</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-stone-100">
+        <div class="text-3xl font-black text-amber-600">2 года</div>
+        <div class="text-sm text-stone-500 mt-1">гарантия</div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 text-center shadow-sm border border-stone-100">
+        <div class="text-3xl font-black text-amber-600">4.9 ★</div>
+        <div class="text-sm text-stone-500 mt-1">средний балл</div>
       </div>
     </div>
   </div>
@@ -828,22 +259,22 @@
 
       <!-- STEP 1: Тип ремонта -->
       <div class="quiz-step active" data-step="1">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Какой ремонт вам нуженA</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Какой ремонт вам нужен?</h3>
         <div class="grid gap-3">
           <div class="opt-card" data-q="type" data-v="cosmetic">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
+            <div class="text-2xl mb-2">🎨</div>
             <div class="font-bold text-stone-900">Косметический</div>
             <div class="text-sm text-stone-500 mt-1">Обои, покраска, замена полов, двери</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 3 500 ₽/м²</div>
           </div>
           <div class="opt-card" data-q="type" data-v="capital">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
+            <div class="text-2xl mb-2">🔨</div>
             <div class="font-bold text-stone-900">Капитальный</div>
             <div class="text-sm text-stone-500 mt-1">Стяжка, штукатурка, плитка, электрика, сантехника</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 8 500 ₽/м²</div>
           </div>
           <div class="opt-card" data-q="type" data-v="designer">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
+            <div class="text-2xl mb-2">✨</div>
             <div class="font-bold text-stone-900">Дизайнерский</div>
             <div class="text-sm text-stone-500 mt-1">Авторский проект, премиальные материалы, мебель</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 18 000 ₽/м²</div>
@@ -853,25 +284,25 @@
 
       <!-- STEP 2: Комнаты -->
       <div class="quiz-step" data-step="2">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Сколько комнат в квартиреA</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Сколько комнат в квартире?</h3>
         <div class="grid grid-cols-2 gap-3">
           <div class="opt-card" data-q="rooms" data-v="38" data-label="Студия / 1 комн.">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
+            <div class="text-2xl mb-2">🏠</div>
             <div class="font-bold text-stone-900">Студия / 1 комн.</div>
             <div class="text-sm text-stone-500 mt-1">~38 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="55" data-label="2 комнаты">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
+            <div class="text-2xl mb-2">🏠🏠</div>
             <div class="font-bold text-stone-900">2 комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~55 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="72" data-label="3 комнаты">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
+            <div class="text-2xl mb-2">🏠🏠🏠</div>
             <div class="font-bold text-stone-900">3 комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~72 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="95" data-label="4+ комнаты">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">04</div>
+            <div class="text-2xl mb-2">🏡</div>
             <div class="font-bold text-stone-900">4+ комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~95 м²</div>
           </div>
@@ -880,20 +311,20 @@
 
       <!-- STEP 3: Когда -->
       <div class="quiz-step" data-step="3">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Когда хотите начатьA</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Когда хотите начать?</h3>
         <div class="grid gap-3">
           <div class="opt-card" data-q="when" data-v="asap" data-label="Как можно скорее">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
+            <div class="text-2xl mb-2">⚡</div>
             <div class="font-bold text-stone-900">Как можно скорее</div>
             <div class="text-sm text-stone-500 mt-1">Готовы начать в ближайшие 2–4 недели</div>
           </div>
           <div class="opt-card" data-q="when" data-v="1-3m" data-label="Через 1–3 месяца">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
+            <div class="text-2xl mb-2">📅</div>
             <div class="font-bold text-stone-900">Через 1–3 месяца</div>
             <div class="text-sm text-stone-500 mt-1">Ещё планируем, подбираем варианты</div>
           </div>
           <div class="opt-card" data-q="when" data-v="later" data-label="Через полгода и позже">
-            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
+            <div class="text-2xl mb-2">🗓</div>
             <div class="font-bold text-stone-900">Через полгода и позже</div>
             <div class="text-sm text-stone-500 mt-1">Просто хочу понять стоимость заранее</div>
           </div>
@@ -933,7 +364,7 @@
 
       <!-- STEP 5: Result -->
       <div class="quiz-step text-center" data-step="5">
-        <div class="text-5xl mb-4 font-black text-amber-500">?</div>
+        <div class="text-5xl mb-4">🎉</div>
         <h3 class="text-2xl font-black text-stone-900 mb-3">Заявка принята!</h3>
         <p class="text-stone-500 mb-6">Перезвоним в течение 30 минут и назовём точную стоимость.</p>
 
@@ -952,7 +383,7 @@
         <p id="q-dm-sent" class="hidden text-sm font-semibold text-green-600 bg-green-50 border border-green-200 rounded-2xl py-3 px-4">
           Копия заявки отправлена вам в Telegram
         </p>
-        <a id="q-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 tg-btn text-white font-bold py-3.5 transition-colors">
+        <a id="q-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 bg-[#229ED9] hover:bg-[#1a8bbf] text-white font-bold py-3.5 rounded-2xl transition-colors">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           Получить копию заявки в Telegram
         </a>
@@ -976,11 +407,11 @@
         <p class="font-semibold text-stone-700 mb-3 text-center">Гостиная, 2-комнатная квартира</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
           <img class="ba-before w-full h-full object-cover" loading="lazy"
-            src="https://images.unsplash.com/photo-1600210492493-0946911123eaAauto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — гостиная" />
           <img class="ba-after-img" loading="lazy"
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
             alt="После ремонта — гостиная" />
           <span class="ba-badge" style="left:14px">ДО</span>
           <span class="ba-badge" style="right:14px; background:rgba(217,119,6,.85)">ПОСЛЕ</span>
@@ -1000,11 +431,11 @@
         <p class="font-semibold text-stone-700 mb-3 text-center">Кухня, капитальный ремонт</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
           <img class="ba-before w-full h-full object-cover" loading="lazy"
-            src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7Aauto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — кухня" />
           <img class="ba-after-img" loading="lazy"
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136Aauto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
             alt="После ремонта — кухня" />
           <span class="ba-badge" style="left:14px">ДО</span>
           <span class="ba-badge" style="right:14px; background:rgba(217,119,6,.85)">ПОСЛЕ</span>
@@ -1023,70 +454,81 @@
 </section>
 
 <!-- ─── PACKAGES ──────────────────────────── -->
-<section id="packages" class="py-20 px-4 bg-stone-50">
+<section id="packages" class="py-20 px-4 bg-white">
   <div class="max-w-5xl mx-auto reveal">
     <div class="text-center mb-12">
-      <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-2">Стоимость работ</p>
-      <h2 class="text-3xl md:text-4xl font-black text-stone-900">Три пакета под любой бюджет</h2>
+      <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-2">Пакеты</p>
+      <h2 class="text-3xl md:text-4xl font-black text-stone-900">Выберите свой формат ремонта</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 stagger-reveal">
-      <div class="package-card">
-        <div class="package-icon">🎨</div>
-        <h3 class="package-title">Косметический</h3>
-        <p class="package-subtitle">Освежим интерьер быстро и в бюджет</p>
-        <div class="package-price">от 3 500 <span>₽/м²</span></div>
-        <p class="package-meta">Срок: 4–6 нед. за 1-комн.</p>
-        <ul class="package-list">
-          <li><span>✓</span> Демонтаж и вывоз строительного мусора</li>
-          <li><span>✓</span> Замена обоев или покраска стен</li>
-          <li><span>✓</span> Укладка ламината или плитки</li>
-          <li><span>✓</span> Установка межкомнатных дверей</li>
-          <li><span>✓</span> Монтаж светильников</li>
+      <!-- Косметический -->
+      <div class="rounded-3xl border-2 border-stone-100 bg-stone-50 p-8 flex flex-col">
+        <div class="text-4xl mb-4">🎨</div>
+        <h3 class="text-xl font-bold text-stone-900 mb-1">Косметический</h3>
+        <p class="text-sm text-stone-500 mb-4">Освежим квартиру быстро и без пыли</p>
+        <div class="text-3xl font-black text-amber-600 mb-1">от 3 500 <span class="text-base font-semibold text-stone-400">₽/м²</span></div>
+        <p class="text-xs text-stone-400 mb-6">Срок: 4–6 недель · Гарантия 1 год</p>
+        <ul class="space-y-2.5 text-sm text-stone-600 flex-1 mb-8">
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Замена обоев или покраска стен</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Укладка ламината или линолеума</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Покраска потолков, плинтуса</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Замена дверей и наличников</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Монтаж светильников</li>
         </ul>
-        <a href="#cta-form" class="package-link">Получить расчёт</a>
+        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white active:scale-95 font-semibold py-3 rounded-xl text-center transition-all">
+          Выбрать пакет
+        </a>
       </div>
 
-      <div class="package-card package-card-featured">
-        <div class="package-badge">Чаще всего выбирают</div>
-        <div class="package-icon">🔨</div>
-        <h3 class="package-title">Капитальный</h3>
-        <p class="package-subtitle">Полная трансформация квартиры</p>
-        <div class="package-price">от 8 500 <span>₽/м²</span></div>
-        <p class="package-meta">Срок: 8–14 нед. за 2-комн.</p>
-        <ul class="package-list">
-          <li><span>✓</span> Стяжка пола, штукатурка стен</li>
-          <li><span>✓</span> Укладка плитки (кухня, санузел)</li>
-          <li><span>✓</span> Замена электропроводки</li>
-          <li><span>✓</span> Замена труб и сантехники</li>
-          <li><span>✓</span> Установка встроенной техники</li>
-          <li><span>✓</span> Чистовая отделка под ключ</li>
+      <!-- Капитальный (highlighted) -->
+      <div class="rounded-3xl bg-stone-900 text-white p-8 flex flex-col relative shadow-2xl shadow-stone-900/20 md:-mt-3 md:-mb-3">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-xs font-bold px-5 py-1.5 rounded-full whitespace-nowrap">
+          Выбирают чаще всего
+        </div>
+        <div class="text-4xl mb-4">🔨</div>
+        <h3 class="text-xl font-bold mb-1">Капитальный</h3>
+        <p class="text-sm text-stone-400 mb-4">Полное преображение с нуля</p>
+        <div class="text-3xl font-black text-amber-400 mb-1">от 8 500 <span class="text-base font-semibold text-stone-500">₽/м²</span></div>
+        <p class="text-xs text-stone-500 mb-6">Срок: 8–14 недель · Гарантия 2 года</p>
+        <ul class="space-y-2.5 text-sm text-stone-300 flex-1 mb-8">
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Всё из косметического</li>
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Стяжка пола, выравнивание стен</li>
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Укладка плитки (ванна, кухня)</li>
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Замена электропроводки</li>
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Замена сантехники и труб</li>
+          <li class="flex gap-2"><span class="text-amber-400 font-bold">✓</span> Натяжные потолки</li>
         </ul>
-        <a href="#cta-form" class="package-link package-link-filled">Получить расчёт</a>
+        <a href="#cta-form" class="mt-auto bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-3 rounded-xl text-center transition-all">
+          Выбрать пакет
+        </a>
       </div>
 
-      <div class="package-card">
-        <div class="package-icon">✨</div>
-        <h3 class="package-title">Дизайнерский</h3>
-        <p class="package-subtitle">Премиальный результат с авторским проектом</p>
-        <div class="package-price">от 18 000 <span>₽/м²</span></div>
-        <p class="package-meta">Срок: 14–20 нед. за 3-комн.</p>
-        <ul class="package-list">
-          <li><span>✓</span> Авторский дизайн-проект</li>
-          <li><span>✓</span> Итальянская плитка и декор</li>
-          <li><span>✓</span> Встроенная мебель на заказ</li>
-          <li><span>✓</span> Умный дом и освещение</li>
-          <li><span>✓</span> 3D-визуализация с нуля</li>
+      <!-- Дизайнерский -->
+      <div class="rounded-3xl border-2 border-stone-100 bg-stone-50 p-8 flex flex-col">
+        <div class="text-4xl mb-4">✨</div>
+        <h3 class="text-xl font-bold text-stone-900 mb-1">Дизайнерский</h3>
+        <p class="text-sm text-stone-500 mb-4">Авторский проект и материалы люкс</p>
+        <div class="text-3xl font-black text-amber-600 mb-1">от 18 000 <span class="text-base font-semibold text-stone-400">₽/м²</span></div>
+        <p class="text-xs text-stone-400 mb-6">Срок: 14–20 недель · Гарантия 3 года</p>
+        <ul class="space-y-2.5 text-sm text-stone-600 flex-1 mb-8">
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Авторский дизайн-проект</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Итальянская плитка и паркет</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Встроенная мебель на заказ</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> Умный дом под ключ</li>
+          <li class="flex gap-2"><span class="text-amber-500 font-bold">✓</span> 3D-визуализация до старта</li>
         </ul>
-        <a href="#cta-form" class="package-link">Получить расчёт</a>
+        <a href="#cta-form" class="mt-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white active:scale-95 font-semibold py-3 rounded-xl text-center transition-all">
+          Выбрать пакет
+        </a>
       </div>
     </div>
-    <p class="text-center text-stone-400 text-sm mt-6">Цены указаны без стоимости материалов. Точный расчёт — после замера.</p>
+    <p class="text-center text-stone-400 text-sm mt-6">Точная цена — после бесплатного замера. Фиксируется в договоре.</p>
   </div>
 </section>
 
 <!-- ─── STAGES ─────────────────────────────── -->
-<section id="stages" class="py-20 px-4 bg-stone-50">
+<section id="stages" class="py-20 px-4 bg-amber-50">
   <div class="max-w-5xl mx-auto reveal">
     <div class="text-center mb-14">
       <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-2">Как мы работаем</p>
@@ -1099,31 +541,31 @@
 
       <!-- Stage 1 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">01</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">📐</div>
         <h4 class="font-bold text-stone-900 mb-1">Замер</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Выезжаем за 24 ч. Замер и смета — бесплатно</p>
       </div>
       <!-- Stage 2 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">02</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">📝</div>
         <h4 class="font-bold text-stone-900 mb-1">Договор</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Фиксируем цену и сроки. Поэтапная оплата</p>
       </div>
       <!-- Stage 3 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">03</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🛒</div>
         <h4 class="font-bold text-stone-900 mb-1">Материалы</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Закупаем сами. Вы согласовываете, мы везём</p>
       </div>
       <!-- Stage 4 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">04</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🏗️</div>
         <h4 class="font-bold text-stone-900 mb-1">Ремонт</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Собственная бригада. Фото в WhatsApp каждый день</p>
       </div>
       <!-- Stage 5 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">05</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🔑</div>
         <h4 class="font-bold text-stone-900 mb-1">Сдача</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Уборка, приёмка, ключи. Гарантия на 2 года</p>
       </div>
@@ -1142,28 +584,28 @@
 
     <div class="grid md:grid-cols-2 gap-5">
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">01</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">💰</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Фиксированная смета</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Цена, указанная в договоре, не изменится. Никаких «забыли включить» или «материал подорожал» — все риски берём на себя.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">02</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">📅</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Срок в договоре</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Дата окончания прописана в договоре. За каждый день просрочки по нашей вине — денежная компенсация.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">03</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">🛡️</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Гарантия 2 года</h4>
-          <p class="text-sm text-stone-500 leading-relaxed">Обнаружили дефект в гарантийный периодA Приедем и устраним бесплатно. Никаких споров и отговорок.</p>
+          <p class="text-sm text-stone-500 leading-relaxed">Обнаружили дефект в гарантийный период? Приедем и устраним бесплатно. Никаких споров и отговорок.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">04</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">📋</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Ежедневная отчётность</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Фото-отчёт каждый вечер в WhatsApp. Видите прогресс из любого города — не нужно лично ехать проверять.</p>
@@ -1225,39 +667,39 @@
 </section>
 
 <!-- ─── FINAL CTA FORM ────────────────────── -->
-<section id="cta-form" class="py-20 px-4 final-section">
-  <div class="final-shell reveal">
-    <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-3">Бесплатный замер</p>
-    <h2 class="text-3xl md:text-4xl font-black text-stone-900 mb-4">
+<section id="cta-form" class="py-20 px-4 bg-stone-900 text-white">
+  <div class="max-w-xl mx-auto text-center reveal">
+    <p class="text-amber-500 font-semibold text-sm uppercase tracking-wider mb-3">Бесплатный замер</p>
+    <h2 class="text-3xl md:text-4xl font-black mb-4">
       Получите смету за 24 часа — без обязательств
     </h2>
-    <p class="text-stone-500 mb-8">Замерщик приедет, всё измерит и составит подробную смету. Это бесплатно. Никаких звонков с навязыванием услуг.</p>
+    <p class="text-stone-400 mb-8">Замерщик приедет, всё измерит и составит подробную смету. Это бесплатно. Никаких звонков с навязыванием услуг.</p>
 
-    <form id="final-form" class="final-form">
+    <form id="final-form" class="bg-stone-800 rounded-2xl p-8 text-left">
       <div class="space-y-4 mb-5">
         <div>
-          <label class="block text-sm font-medium text-stone-700 mb-1.5">Ваше имя</label>
-          <input id="f-name" type="text" placeholder="Как вас зовутA" required
-            class="w-full bg-stone-50 border border-stone-200 text-stone-900 placeholder-stone-400 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors" />
+          <label class="block text-sm font-medium text-stone-300 mb-1.5">Ваше имя</label>
+          <input id="f-name" type="text" placeholder="Как вас зовут?" required
+            class="w-full bg-stone-700 border border-stone-600 text-white placeholder-stone-500 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors" />
         </div>
         <div>
-          <label class="block text-sm font-medium text-stone-700 mb-1.5">Телефон</label>
+          <label class="block text-sm font-medium text-stone-300 mb-1.5">Телефон</label>
           <input id="f-phone" type="tel" placeholder="+7 (___) ___-__-__" required
-            class="w-full bg-stone-50 border border-stone-200 text-stone-900 placeholder-stone-400 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors" />
+            class="w-full bg-stone-700 border border-stone-600 text-white placeholder-stone-500 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors" />
         </div>
         <div>
-          <label class="block text-sm font-medium text-stone-700 mb-1.5">Telegram-никнейм</label>
+          <label class="block text-sm font-medium text-stone-300 mb-1.5">Telegram-никнейм</label>
           <div class="relative">
             <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 font-semibold select-none">@</span>
             <input id="f-tg" type="text" placeholder="username" required
-              class="w-full bg-stone-50 border border-stone-200 text-stone-900 placeholder-stone-400 rounded-xl pl-9 pr-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors" />
+              class="w-full bg-stone-700 border border-stone-600 text-white placeholder-stone-500 rounded-xl pl-9 pr-4 py-3 focus:outline-none focus:border-amber-500 transition-colors" />
           </div>
-          <p id="f-tg-error" class="text-xs text-red-500 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
+          <p id="f-tg-error" class="text-xs text-red-400 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
         </div>
         <div>
-          <label class="block text-sm font-medium text-stone-700 mb-1.5">Что планируетеA <span class="text-stone-500">(необязательно)</span></label>
+          <label class="block text-sm font-medium text-stone-300 mb-1.5">Что планируете? <span class="text-stone-500">(необязательно)</span></label>
           <select id="f-type"
-            class="w-full bg-stone-50 border border-stone-200 text-stone-700 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors">
+            class="w-full bg-stone-700 border border-stone-600 text-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors">
             <option value="">Выберите тип ремонта</option>
             <option>🎨 Косметический</option>
             <option>🔨 Капитальный</option>
@@ -1266,20 +708,20 @@
         </div>
       </div>
       <button type="submit"
-        class="w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-4 rounded-2xl text-lg transition-all shadow-lg shadow-amber-300/50">
+        class="w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-4 rounded-xl text-lg transition-all">
         Записаться на бесплатный замер →
       </button>
-      <p class="text-xs text-stone-500 text-center mt-3">Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" target="_blank" class="underline hover:text-amber-600 transition-colors">политикой конфиденциальности</a></p>
+      <p class="text-xs text-stone-500 text-center mt-3">Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" target="_blank" class="underline hover:text-amber-400 transition-colors">политикой конфиденциальности</a></p>
     </form>
 
-    <div id="final-success" class="hidden final-success">
+    <div id="final-success" class="hidden bg-stone-800 rounded-2xl p-10 text-center">
       <div class="text-5xl mb-4">✅</div>
-      <h3 class="text-2xl font-bold text-stone-900 mb-2">Заявка принята</h3>
-      <p class="text-stone-500 mb-6">Перезвоним в течение 30 минут и согласуем удобное время замера.</p>
-      <p id="f-dm-sent" class="hidden text-sm font-semibold text-green-600 bg-green-50 border border-green-200 rounded-2xl py-3 px-4">
+      <h3 class="text-2xl font-bold mb-2">Заявка принята!</h3>
+      <p class="text-stone-400 mb-6">Перезвоним в течение 30 минут и согласуем удобное время замера.</p>
+      <p id="f-dm-sent" class="hidden text-sm font-semibold text-green-400 bg-green-900/30 border border-green-700 rounded-2xl py-3 px-4">
         Копия заявки отправлена вам в Telegram
       </p>
-      <a id="f-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 tg-btn text-white font-bold py-3.5 transition-colors">
+      <a id="f-tg-link" href="#" target="_blank" rel="noopener" class="hidden w-full flex items-center justify-center gap-2 bg-[#229ED9] hover:bg-[#1a8bbf] text-white font-bold py-3.5 rounded-2xl transition-colors">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         Получить копию заявки в Telegram
       </a>
@@ -1288,15 +730,15 @@
 </section>
 
 <!-- ─── FOOTER ─────────────────────────────── -->
-<footer class="footer-shell py-10 px-4">
+<footer class="bg-stone-950 text-stone-500 py-10 px-4">
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
     <div class="flex items-center gap-2">
       <div class="w-6 h-6 rounded-md bg-amber-500 flex items-center justify-center text-white font-black text-xs">Р</div>
-      <span class="font-bold text-stone-800">РемКвартира</span>
+      <span class="font-bold text-stone-300">РемКвартира</span>
     </div>
     <div class="flex gap-6 text-xs">
-      <a href="/privacy.html" class="hover:text-stone-800 transition-colors">Политика конфиденциальности</a>
-      <a href="/offer.html" class="hover:text-stone-800 transition-colors">Договор оферты</a>
+      <a href="/privacy.html" class="hover:text-stone-300 transition-colors">Политика конфиденциальности</a>
+      <a href="/offer.html" class="hover:text-stone-300 transition-colors">Договор оферты</a>
     </div>
     <p class="text-xs">© <span id="copy-year"></span> РемКвартира. Все права защищены.</p>
   </div>
@@ -1375,7 +817,7 @@ const quiz = {
     document.querySelector(`.quiz-step[data-step="${this.step}"]`).classList.remove('active');
     this.step = n;
     document.querySelector(`.quiz-step[data-step="${n}"]`).classList.add('active');
-    document.getElementById('q-step-label').textContent = n <= this.total A `Шаг ${n} из ${this.total}` : 'Готово!';
+    document.getElementById('q-step-label').textContent = n <= this.total ? `Шаг ${n} из ${this.total}` : 'Готово!';
     document.getElementById('q-progress').style.width = Math.min(n / this.total * 100, 100) + '%';
   },
 
@@ -1397,7 +839,7 @@ document.querySelectorAll('.opt-card').forEach(card => {
     card.classList.add('selected');
 
     quiz.data[q] = card.dataset.v;
-    quiz.data[q + 'Label'] = card.dataset.label || card.querySelector('.font-bold')A.textContentA.trim() || card.dataset.v;
+    quiz.data[q + 'Label'] = card.dataset.label || card.querySelector('.font-bold')?.textContent?.trim() || card.dataset.v;
 
     setTimeout(() => quiz.goTo(quiz.step + 1), 250);
   });
@@ -1405,7 +847,7 @@ document.querySelectorAll('.opt-card').forEach(card => {
 
 // TG username validator
 function validateTG(val) {
-  return /^@A[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(val.trim());
+  return /^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(val.trim());
 }
 function normTG(val) {
   const clean = val.trim().replace(/^@/, '');
@@ -1444,9 +886,9 @@ document.getElementById('q-submit').addEventListener('click', async () => {
     when:   quiz.data.whenLabel,
     price:  priceRange
   }).then(r => {
-    if (rA.dmSent) {
+    if (r?.dmSent) {
       document.getElementById('q-dm-sent').classList.remove('hidden');
-    } else if (rA.startLink) {
+    } else if (r?.startLink) {
       const btn = document.getElementById('q-tg-link');
       btn.href = r.startLink;
       btn.classList.remove('hidden');
@@ -1481,9 +923,9 @@ document.getElementById('final-form').addEventListener('submit', async e => {
 
   submitToApi({ source: '📋 Форма «Получить смету»', name, phone, tg: normTG(tg), type: type || 'не указан' })
     .then(r => {
-      if (rA.dmSent) {
+      if (r?.dmSent) {
         document.getElementById('f-dm-sent').classList.remove('hidden');
-      } else if (rA.startLink) {
+      } else if (r?.startLink) {
         const btn = document.getElementById('f-tg-link');
         btn.href = r.startLink;
         btn.classList.remove('hidden');

@@ -135,17 +135,9 @@
 
 ## Стек и деплой
 
-- Чистый HTML + Tailwind CSS, собранный в статический `styles.css` (~21 КиБ вместо 123 КиБ CDN, без блокирующего рендер JS)
+- Чистый HTML + Tailwind CSS CDN — без сборщика, быстрый старт
 - Serverless API на Vercel (Node.js) — обработка форм на сервере, credentials не попадают в браузер
 - Telegram Bot API — заявки в топики группы + личное сообщение клиенту
 - Upstash Redis — хранение заявок и `@username → chat_id` для прямых DM
 - Деплой на Vercel, все секреты в переменных окружения
 - Репозиторий: [GPT-Pomogi/remont-kvartir](https://github.com/GPT-Pomogi/remont-kvartir)
-
-### Сборка стилей
-
-CSS собран заранее и закоммичен, поэтому деплой остаётся статическим. Пересобрать после изменения классов:
-
-```bash
-npx tailwindcss@3.4.17 -i ./src/input.css -o ./styles.css --minify
-```
