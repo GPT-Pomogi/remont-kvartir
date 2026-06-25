@@ -13,7 +13,7 @@
   <meta property="og:url"         content="https://remont-kvartir-pf.vercel.app/" />
   <meta property="og:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета, гарантия 2 года" />
   <meta property="og:description" content="Ремонт квартир под ключ в Москве с фиксированной сметой. Цена не изменится. Гарантия 2 года. Бесплатный замер за 24 часа." />
-  <meta property="og:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=1200&h=630&q=80" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale"      content="ru_RU" />
@@ -23,7 +23,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Ремонт квартир под ключ в Москве — фиксированная смета" />
   <meta name="twitter:description" content="Ремонт квартир под ключ с фиксированной сметой. Гарантия 2 года. Бесплатный замер за 24 часа." />
-  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=1200&h=630&q=80" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/styles.css" />
@@ -101,7 +101,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2Afamily=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     html { scroll-behavior: smooth; }
@@ -149,7 +149,7 @@
     .nav-shell {
       background: rgba(255, 252, 247, .82);
       border: 1px solid rgba(217, 119, 6, .08);
-      box-shadow: 0 18px 50px rgba(28, 25, 23, .08);
+      box-shadow: 0 12px 34px rgba(28, 25, 23, .06);
       backdrop-filter: blur(18px);
     }
 
@@ -187,8 +187,8 @@
       border-radius: 36px;
       padding: 1.25rem;
       border: 1px solid rgba(120, 53, 15, .08);
-      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,252,247,.94));
-      box-shadow: 0 28px 90px rgba(28, 25, 23, .08);
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,253,249,.98));
+      box-shadow: 0 24px 72px rgba(28, 25, 23, .06);
     }
 
     .hero-grid {
@@ -292,18 +292,13 @@
       transform: scale(.98);
     }
 
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
     .hero-visual {
       position: relative;
       min-height: 580px;
       border-radius: 32px;
       overflow: hidden;
-      background: #e7dccd;
-      box-shadow: 0 24px 80px rgba(68, 64, 60, .18);
+      background: #efe7db;
+      box-shadow: 0 22px 65px rgba(68, 64, 60, .14);
     }
 
     .hero-visual::after {
@@ -326,7 +321,7 @@
       z-index: 3;
       border: 1px solid rgba(255,255,255,.6);
       background: rgba(255,252,248,.92);
-      box-shadow: 0 18px 45px rgba(28,25,23,.15);
+      box-shadow: 0 14px 32px rgba(28,25,23,.12);
       backdrop-filter: blur(14px);
     }
 
@@ -353,12 +348,6 @@
       color: #a8a29e;
       font-weight: 800;
       margin-bottom: .5rem;
-    }
-
-    .hero-proof-list > div {
-      border: 1px solid rgba(120, 53, 15, .08);
-      background: rgba(255,255,255,.72);
-      box-shadow: 0 12px 30px rgba(28,25,23,.05);
     }
 
     .package-card {
@@ -503,10 +492,15 @@
     .hero-metric-bar {
       border: 1px solid rgba(120, 53, 15, .08);
       background: rgba(255,255,255,.84);
-      box-shadow: 0 20px 60px rgba(28,25,23,.06);
+      box-shadow: 0 14px 40px rgba(28,25,23,.05);
       border-radius: 30px;
       padding: 1rem;
       margin-top: 1.5rem;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 42rem;
     }
 
     .tg-btn {
@@ -562,22 +556,15 @@
       border: 1px solid rgba(120, 53, 15, .08);
       box-shadow: 0 24px 65px rgba(28,25,23,.10);
     }
-
-    #packages .rounded-3xl,
     #reviews .rounded-2xl,
     #guarantees .g-card {
       transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
     }
 
-    #packages .rounded-3xl:hover,
     #reviews .rounded-2xl:hover,
     #guarantees .g-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 22px 55px rgba(28,25,23,.10);
-    }
-
-    #packages .rounded-3xl {
-      box-shadow: 0 16px 40px rgba(28,25,23,.05);
     }
 
     #stages .text-center.relative {
@@ -609,6 +596,10 @@
     .stagger-reveal > *:nth-child(4) { transition-delay:.35s; }
     .stagger-reveal > *:nth-child(5) { transition-delay:.45s; }
     .stagger-reveal.visible > * { opacity:1; transform:translateY(0); }
+
+    @media (min-width: 640px) {
+      .hero-actions { flex-direction: row; }
+    }
 
     @media (max-width: 1023px) {
       .hero-visual { min-height: 420px; }
@@ -710,34 +701,37 @@
           </p>
 
           <div class="hero-actions sm:flex-row">
-            <a href="#quiz" class="hero-btn px-8 py-4 text-center">
-              Рассчитать стоимость →
+            <a href="#quiz" class="hero-btn px-6 py-4 gap-3">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M7 8h10M7 12h4M7 16h4M15 12h2M15 16h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <div class="text-left">
+                <div class="font-extrabold leading-tight">Рассчитать стоимость</div>
+                <div class="text-xs opacity-75 font-medium mt-0.5">Бесплатно за 1 минуту</div>
+              </div>
             </a>
-            <a href="#before-after" class="hero-btn-secondary px-8 py-4 text-center">
-              Посмотреть работы
+            <a href="#before-after" class="hero-btn-secondary px-6 py-4 gap-3">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="8.5" cy="10" r="1.5" fill="currentColor"/>
+                <path d="M3 17l4-4 3 3 3.5-4 5.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="text-left">
+                <div class="font-extrabold leading-tight">Посмотреть работы</div>
+                <div class="text-xs opacity-70 font-medium mt-0.5">Реальные фото и отзывы</div>
+              </div>
             </a>
           </div>
 
-          <div class="hero-proof-list grid sm:grid-cols-3 gap-3 text-sm text-stone-700">
-            <div class="rounded-2xl px-4 py-3">
-              <div class="font-extrabold text-stone-900">340+ объектов</div>
-              <div class="text-stone-500">сдали без срыва бюджета</div>
-            </div>
-            <div class="rounded-2xl px-4 py-3">
-              <div class="font-extrabold text-stone-900">Фотоотчёт ежедневно</div>
-              <div class="text-stone-500">контроль со смартфона</div>
-            </div>
-            <div class="rounded-2xl px-4 py-3">
-              <div class="font-extrabold text-stone-900">Выезд за 24 часа</div>
-              <div class="text-stone-500">замер и смета бесплатно</div>
-            </div>
-          </div>
+          
+        
         </div>
 
         <div class="reveal">
           <div class="hero-visual">
             <img
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=80"
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6Aauto=format&fit=crop&w=1400&q=80"
               alt="Современный интерьер после ремонта"
             />
 
@@ -787,6 +781,28 @@
             <div class="text-xs text-stone-400 mt-2">по отзывам клиентов</div>
           </div>
         </div>
+        <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-stone-500">
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Работаем по договору</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <span>Фиксируем сроки и стоимость</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M2 10h20" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <span>Оплата по этапам, без переплат</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -812,22 +828,22 @@
 
       <!-- STEP 1: Тип ремонта -->
       <div class="quiz-step active" data-step="1">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Какой ремонт вам нужен?</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Какой ремонт вам нуженA</h3>
         <div class="grid gap-3">
           <div class="opt-card" data-q="type" data-v="cosmetic">
-            <div class="text-2xl mb-2">🎨</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
             <div class="font-bold text-stone-900">Косметический</div>
             <div class="text-sm text-stone-500 mt-1">Обои, покраска, замена полов, двери</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 3 500 ₽/м²</div>
           </div>
           <div class="opt-card" data-q="type" data-v="capital">
-            <div class="text-2xl mb-2">🔨</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
             <div class="font-bold text-stone-900">Капитальный</div>
             <div class="text-sm text-stone-500 mt-1">Стяжка, штукатурка, плитка, электрика, сантехника</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 8 500 ₽/м²</div>
           </div>
           <div class="opt-card" data-q="type" data-v="designer">
-            <div class="text-2xl mb-2">✨</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
             <div class="font-bold text-stone-900">Дизайнерский</div>
             <div class="text-sm text-stone-500 mt-1">Авторский проект, премиальные материалы, мебель</div>
             <div class="text-xs font-semibold text-amber-600 mt-2">от 18 000 ₽/м²</div>
@@ -837,25 +853,25 @@
 
       <!-- STEP 2: Комнаты -->
       <div class="quiz-step" data-step="2">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Сколько комнат в квартире?</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Сколько комнат в квартиреA</h3>
         <div class="grid grid-cols-2 gap-3">
           <div class="opt-card" data-q="rooms" data-v="38" data-label="Студия / 1 комн.">
-            <div class="text-2xl mb-2">🏠</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
             <div class="font-bold text-stone-900">Студия / 1 комн.</div>
             <div class="text-sm text-stone-500 mt-1">~38 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="55" data-label="2 комнаты">
-            <div class="text-2xl mb-2">🏠🏠</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
             <div class="font-bold text-stone-900">2 комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~55 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="72" data-label="3 комнаты">
-            <div class="text-2xl mb-2">🏠🏠🏠</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
             <div class="font-bold text-stone-900">3 комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~72 м²</div>
           </div>
           <div class="opt-card" data-q="rooms" data-v="95" data-label="4+ комнаты">
-            <div class="text-2xl mb-2">🏡</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">04</div>
             <div class="font-bold text-stone-900">4+ комнаты</div>
             <div class="text-sm text-stone-500 mt-1">~95 м²</div>
           </div>
@@ -864,20 +880,20 @@
 
       <!-- STEP 3: Когда -->
       <div class="quiz-step" data-step="3">
-        <h3 class="text-xl font-bold text-stone-900 mb-6">Когда хотите начать?</h3>
+        <h3 class="text-xl font-bold text-stone-900 mb-6">Когда хотите начатьA</h3>
         <div class="grid gap-3">
           <div class="opt-card" data-q="when" data-v="asap" data-label="Как можно скорее">
-            <div class="text-2xl mb-2">⚡</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">01</div>
             <div class="font-bold text-stone-900">Как можно скорее</div>
             <div class="text-sm text-stone-500 mt-1">Готовы начать в ближайшие 2–4 недели</div>
           </div>
           <div class="opt-card" data-q="when" data-v="1-3m" data-label="Через 1–3 месяца">
-            <div class="text-2xl mb-2">📅</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">02</div>
             <div class="font-bold text-stone-900">Через 1–3 месяца</div>
             <div class="text-sm text-stone-500 mt-1">Ещё планируем, подбираем варианты</div>
           </div>
           <div class="opt-card" data-q="when" data-v="later" data-label="Через полгода и позже">
-            <div class="text-2xl mb-2">🗓</div>
+            <div class="text-2xl mb-2 font-black tracking-tight text-amber-600">03</div>
             <div class="font-bold text-stone-900">Через полгода и позже</div>
             <div class="text-sm text-stone-500 mt-1">Просто хочу понять стоимость заранее</div>
           </div>
@@ -917,7 +933,7 @@
 
       <!-- STEP 5: Result -->
       <div class="quiz-step text-center" data-step="5">
-        <div class="text-5xl mb-4">🎉</div>
+        <div class="text-5xl mb-4 font-black text-amber-500">?</div>
         <h3 class="text-2xl font-black text-stone-900 mb-3">Заявка принята!</h3>
         <p class="text-stone-500 mb-6">Перезвоним в течение 30 минут и назовём точную стоимость.</p>
 
@@ -960,11 +976,11 @@
         <p class="font-semibold text-stone-700 mb-3 text-center">Гостиная, 2-комнатная квартира</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
           <img class="ba-before w-full h-full object-cover" loading="lazy"
-            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1600210492493-0946911123eaAauto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — гостиная" />
           <img class="ba-after-img" loading="lazy"
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7Aauto=format&fit=crop&w=900&q=80"
             alt="После ремонта — гостиная" />
           <span class="ba-badge" style="left:14px">ДО</span>
           <span class="ba-badge" style="right:14px; background:rgba(217,119,6,.85)">ПОСЛЕ</span>
@@ -984,11 +1000,11 @@
         <p class="font-semibold text-stone-700 mb-3 text-center">Кухня, капитальный ремонт</p>
         <div class="ba-wrap" style="aspect-ratio:4/3">
           <img class="ba-before w-full h-full object-cover" loading="lazy"
-            src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7Aauto=format&fit=crop&w=900&q=80"
             style="filter:grayscale(.5) sepia(.65) brightness(.5) saturate(.25) contrast(1.05)"
             alt="До ремонта — кухня" />
           <img class="ba-after-img" loading="lazy"
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136Aauto=format&fit=crop&w=900&q=80"
             alt="После ремонта — кухня" />
           <span class="ba-badge" style="left:14px">ДО</span>
           <span class="ba-badge" style="right:14px; background:rgba(217,119,6,.85)">ПОСЛЕ</span>
@@ -1010,62 +1026,62 @@
 <section id="packages" class="py-20 px-4 bg-stone-50">
   <div class="max-w-5xl mx-auto reveal">
     <div class="text-center mb-12">
-      <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-2">??????</p>
-      <h2 class="text-3xl md:text-4xl font-black text-stone-900">???????? ???? ?????? ???????</h2>
+      <p class="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-2">Стоимость работ</p>
+      <h2 class="text-3xl md:text-4xl font-black text-stone-900">Три пакета под любой бюджет</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 stagger-reveal">
       <div class="package-card">
-        <div class="package-icon">??</div>
-        <h3 class="package-title">?????????????</h3>
-        <p class="package-subtitle">??????? ???????? ?????? ? ??? ????</p>
-        <div class="package-price">?? 3 500 <span>?/??</span></div>
-        <p class="package-meta">????: 4?6 ?????? ? ???????? 1 ???</p>
+        <div class="package-icon">🎨</div>
+        <h3 class="package-title">Косметический</h3>
+        <p class="package-subtitle">Освежим интерьер быстро и в бюджет</p>
+        <div class="package-price">от 3 500 <span>₽/м²</span></div>
+        <p class="package-meta">Срок: 4–6 нед. за 1-комн.</p>
         <ul class="package-list">
-          <li><span>?</span> ?????? ????? ??? ???????? ????</li>
-          <li><span>?</span> ??????? ???????? ??? ?????????</li>
-          <li><span>?</span> ???????? ????????, ????????</li>
-          <li><span>?</span> ?????? ?????? ? ??????????</li>
-          <li><span>?</span> ?????? ????????????</li>
+          <li><span>✓</span> Демонтаж и вывоз строительного мусора</li>
+          <li><span>✓</span> Замена обоев или покраска стен</li>
+          <li><span>✓</span> Укладка ламината или плитки</li>
+          <li><span>✓</span> Установка межкомнатных дверей</li>
+          <li><span>✓</span> Монтаж светильников</li>
         </ul>
-        <a href="#cta-form" class="package-link">??????? ?????</a>
+        <a href="#cta-form" class="package-link">Получить расчёт</a>
       </div>
 
       <div class="package-card package-card-featured">
-        <div class="package-badge">???????? ???? ?????</div>
-        <div class="package-icon">??</div>
-        <h3 class="package-title">???????????</h3>
-        <p class="package-subtitle">?????? ???????????? ? ????</p>
-        <div class="package-price">?? 8 500 <span>?/??</span></div>
-        <p class="package-meta">????: 8?14 ?????? ? ???????? 2 ????</p>
+        <div class="package-badge">Чаще всего выбирают</div>
+        <div class="package-icon">🔨</div>
+        <h3 class="package-title">Капитальный</h3>
+        <p class="package-subtitle">Полная трансформация квартиры</p>
+        <div class="package-price">от 8 500 <span>₽/м²</span></div>
+        <p class="package-meta">Срок: 8–14 нед. за 2-комн.</p>
         <ul class="package-list">
-          <li><span>?</span> ??? ?? ??????????????</li>
-          <li><span>?</span> ?????? ????, ???????????? ????</li>
-          <li><span>?</span> ??????? ?????? (?????, ?????)</li>
-          <li><span>?</span> ?????? ???????????????</li>
-          <li><span>?</span> ?????? ?????????? ? ????</li>
-          <li><span>?</span> ???????? ???????</li>
+          <li><span>✓</span> Стяжка пола, штукатурка стен</li>
+          <li><span>✓</span> Укладка плитки (кухня, санузел)</li>
+          <li><span>✓</span> Замена электропроводки</li>
+          <li><span>✓</span> Замена труб и сантехники</li>
+          <li><span>✓</span> Установка встроенной техники</li>
+          <li><span>✓</span> Чистовая отделка под ключ</li>
         </ul>
-        <a href="#cta-form" class="package-link package-link-filled">??????? ?????</a>
+        <a href="#cta-form" class="package-link package-link-filled">Получить расчёт</a>
       </div>
 
       <div class="package-card">
-        <div class="package-icon">?</div>
-        <h3 class="package-title">????????????</h3>
-        <p class="package-subtitle">????????? ?????? ? ????????? ????</p>
-        <div class="package-price">?? 18 000 <span>?/??</span></div>
-        <p class="package-meta">????: 14?20 ?????? ? ???????? 3 ????</p>
+        <div class="package-icon">✨</div>
+        <h3 class="package-title">Дизайнерский</h3>
+        <p class="package-subtitle">Премиальный результат с авторским проектом</p>
+        <div class="package-price">от 18 000 <span>₽/м²</span></div>
+        <p class="package-meta">Срок: 14–20 нед. за 3-комн.</p>
         <ul class="package-list">
-          <li><span>?</span> ????????? ??????-??????</li>
-          <li><span>?</span> ??????????? ?????? ? ??????</li>
-          <li><span>?</span> ?????????? ?????? ?? ?????</li>
-          <li><span>?</span> ????? ??? ??? ????</li>
-          <li><span>?</span> 3D-???????????? ?? ??????</li>
+          <li><span>✓</span> Авторский дизайн-проект</li>
+          <li><span>✓</span> Итальянская плитка и декор</li>
+          <li><span>✓</span> Встроенная мебель на заказ</li>
+          <li><span>✓</span> Умный дом и освещение</li>
+          <li><span>✓</span> 3D-визуализация с нуля</li>
         </ul>
-        <a href="#cta-form" class="package-link">??????? ?????</a>
+        <a href="#cta-form" class="package-link">Получить расчёт</a>
       </div>
     </div>
-    <p class="text-center text-stone-400 text-sm mt-6">?????? ???? ? ????? ??????????? ??????. ??????????? ? ????????.</p>
+    <p class="text-center text-stone-400 text-sm mt-6">Цены указаны без стоимости материалов. Точный расчёт — после замера.</p>
   </div>
 </section>
 
@@ -1083,31 +1099,31 @@
 
       <!-- Stage 1 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">📐</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">01</div>
         <h4 class="font-bold text-stone-900 mb-1">Замер</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Выезжаем за 24 ч. Замер и смета — бесплатно</p>
       </div>
       <!-- Stage 2 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">📝</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">02</div>
         <h4 class="font-bold text-stone-900 mb-1">Договор</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Фиксируем цену и сроки. Поэтапная оплата</p>
       </div>
       <!-- Stage 3 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🛒</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">03</div>
         <h4 class="font-bold text-stone-900 mb-1">Материалы</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Закупаем сами. Вы согласовываете, мы везём</p>
       </div>
       <!-- Stage 4 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🏗️</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">04</div>
         <h4 class="font-bold text-stone-900 mb-1">Ремонт</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Собственная бригада. Фото в WhatsApp каждый день</p>
       </div>
       <!-- Stage 5 -->
       <div class="text-center relative">
-        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">🔑</div>
+        <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-black tracking-tight mx-auto mb-4 relative z-10 shadow-md shadow-amber-200">05</div>
         <h4 class="font-bold text-stone-900 mb-1">Сдача</h4>
         <p class="text-xs text-stone-500 leading-relaxed">Уборка, приёмка, ключи. Гарантия на 2 года</p>
       </div>
@@ -1126,28 +1142,28 @@
 
     <div class="grid md:grid-cols-2 gap-5">
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">💰</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">01</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Фиксированная смета</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Цена, указанная в договоре, не изменится. Никаких «забыли включить» или «материал подорожал» — все риски берём на себя.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">📅</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">02</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Срок в договоре</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Дата окончания прописана в договоре. За каждый день просрочки по нашей вине — денежная компенсация.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">🛡️</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">03</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Гарантия 2 года</h4>
-          <p class="text-sm text-stone-500 leading-relaxed">Обнаружили дефект в гарантийный период? Приедем и устраним бесплатно. Никаких споров и отговорок.</p>
+          <p class="text-sm text-stone-500 leading-relaxed">Обнаружили дефект в гарантийный периодA Приедем и устраним бесплатно. Никаких споров и отговорок.</p>
         </div>
       </div>
       <div class="g-card flex gap-5 p-6 rounded-2xl border border-stone-100 bg-stone-50 transition-all duration-300">
-        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl shrink-0">📋</div>
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-sm font-black tracking-tight text-amber-700 shrink-0">04</div>
         <div>
           <h4 class="font-bold text-stone-900 mb-1">Ежедневная отчётность</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Фото-отчёт каждый вечер в WhatsApp. Видите прогресс из любого города — не нужно лично ехать проверять.</p>
@@ -1221,7 +1237,7 @@
       <div class="space-y-4 mb-5">
         <div>
           <label class="block text-sm font-medium text-stone-700 mb-1.5">Ваше имя</label>
-          <input id="f-name" type="text" placeholder="Как вас зовут?" required
+          <input id="f-name" type="text" placeholder="Как вас зовутA" required
             class="w-full bg-stone-50 border border-stone-200 text-stone-900 placeholder-stone-400 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors" />
         </div>
         <div>
@@ -1239,7 +1255,7 @@
           <p id="f-tg-error" class="text-xs text-red-500 mt-1 hidden">Только буквы, цифры и «_», минимум 5 символов</p>
         </div>
         <div>
-          <label class="block text-sm font-medium text-stone-700 mb-1.5">Что планируете? <span class="text-stone-500">(необязательно)</span></label>
+          <label class="block text-sm font-medium text-stone-700 mb-1.5">Что планируетеA <span class="text-stone-500">(необязательно)</span></label>
           <select id="f-type"
             class="w-full bg-stone-50 border border-stone-200 text-stone-700 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition-colors">
             <option value="">Выберите тип ремонта</option>
@@ -1359,7 +1375,7 @@ const quiz = {
     document.querySelector(`.quiz-step[data-step="${this.step}"]`).classList.remove('active');
     this.step = n;
     document.querySelector(`.quiz-step[data-step="${n}"]`).classList.add('active');
-    document.getElementById('q-step-label').textContent = n <= this.total ? `Шаг ${n} из ${this.total}` : 'Готово!';
+    document.getElementById('q-step-label').textContent = n <= this.total A `Шаг ${n} из ${this.total}` : 'Готово!';
     document.getElementById('q-progress').style.width = Math.min(n / this.total * 100, 100) + '%';
   },
 
@@ -1381,7 +1397,7 @@ document.querySelectorAll('.opt-card').forEach(card => {
     card.classList.add('selected');
 
     quiz.data[q] = card.dataset.v;
-    quiz.data[q + 'Label'] = card.dataset.label || card.querySelector('.font-bold')?.textContent?.trim() || card.dataset.v;
+    quiz.data[q + 'Label'] = card.dataset.label || card.querySelector('.font-bold')A.textContentA.trim() || card.dataset.v;
 
     setTimeout(() => quiz.goTo(quiz.step + 1), 250);
   });
@@ -1389,7 +1405,7 @@ document.querySelectorAll('.opt-card').forEach(card => {
 
 // TG username validator
 function validateTG(val) {
-  return /^@?[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(val.trim());
+  return /^@A[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(val.trim());
 }
 function normTG(val) {
   const clean = val.trim().replace(/^@/, '');
@@ -1428,9 +1444,9 @@ document.getElementById('q-submit').addEventListener('click', async () => {
     when:   quiz.data.whenLabel,
     price:  priceRange
   }).then(r => {
-    if (r?.dmSent) {
+    if (rA.dmSent) {
       document.getElementById('q-dm-sent').classList.remove('hidden');
-    } else if (r?.startLink) {
+    } else if (rA.startLink) {
       const btn = document.getElementById('q-tg-link');
       btn.href = r.startLink;
       btn.classList.remove('hidden');
@@ -1465,9 +1481,9 @@ document.getElementById('final-form').addEventListener('submit', async e => {
 
   submitToApi({ source: '📋 Форма «Получить смету»', name, phone, tg: normTG(tg), type: type || 'не указан' })
     .then(r => {
-      if (r?.dmSent) {
+      if (rA.dmSent) {
         document.getElementById('f-dm-sent').classList.remove('hidden');
-      } else if (r?.startLink) {
+      } else if (rA.startLink) {
         const btn = document.getElementById('f-tg-link');
         btn.href = r.startLink;
         btn.classList.remove('hidden');
